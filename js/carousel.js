@@ -1,30 +1,30 @@
-let carouselNumber = document.getElementsByClassName("slider");
+let carouselNumber = document.querySelectorAll(".slider");
 
-for (let i = 0; i < carouselNumber.length; i++) {
-  let slides = carouselNumber[i].getElementsByClassName("slid");
+carouselNumber.forEach((item, i) => {
+  let slides = item.querySelectorAll(".slid");
   let slideNum = 1;
 
   showSlides(slideNum, carouselNumber, slides);
 
-  let prevButton = carouselNumber[i].getElementsByClassName("prev");
-  let nextButton = carouselNumber[i].getElementsByClassName("next");
+  let prevButton = item.querySelectorAll(".prev");
+  let nextButton = item.querySelectorAll(".next");
 
-  for (let j = 0; j < nextButton.length; j++) {
-    nextButton[j].addEventListener('click', function(){
-      showSlides(slideNum += 1, carouselNumber[i], slides)
+  nextButton.forEach((itemNextButton) => {
+    itemNextButton.addEventListener('click', function(){
+      showSlides(slideNum += 1, item, slides)
     });
-  }
+  });
 
-  for (let j = 0; j < prevButton.length; j++) {
-    prevButton[j].addEventListener('click', function(){
-      showSlides(slideNum -= 1, carouselNumber[i], slides)
+  prevButton.forEach((itemPrevButton) => {
+    itemPrevButton.addEventListener('click', function(){
+      showSlides(slideNum -= 1, item, slides)
     });
-  }
-}
+  });
+});
 
 function showSlides(slideNum, carouselNum, slides) {
-  for(let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  slides.forEach((item) => {
+    item.style.display = "none";
+  });
   slides[slideNum - 1].style.display = "block";
 }
