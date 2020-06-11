@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@200&display=swap" rel="stylesheet">
   <link href="style/grid.css" rel="stylesheet">
   <link href="style/button.css" rel="stylesheet">
   <link href="style/modal.css" rel="stylesheet">
   <link href="style/burger.css" rel="stylesheet">
   <link href="style/carousel.css" rel="stylesheet">
+  <link href="style/data-tables.css" rel="stylesheet">
   <title>UI-library</title>
 </head>
 <body>
@@ -197,35 +199,40 @@
   </div>
 </div>
 
-<h1>Carusel</h1>
-<div class="slider" id="carousel">
+<h1>Carousel</h1>
+<div class="slider">
   <div class="slid">
     <img src="img/slid3.jpg" alt="Error">
-    <button class="next" onclick="plusSlides(1)"> >> </button>
+    <button class="next"> >> </button>
   </div>
   <div class="slid">
-    <button class="prev" onclick="plusSlides(-1)"> << </button>
+    <button class="prev"> << </button>
     <img src="img/slid4.jpg" alt="Error">
-    <button class="next" onclick="plusSlides(1)"> >> </button>
+    <button class="next"> >> </button>
   </div>
   <div class="slid">
-    <button class="prev" onclick="plusSlides(-1)"> << </button>
+    <button class="prev"> << </button>
     <img src="img/slid.jpg" alt="Error">
-    <button class="next" onclick="plusSlides(1)"> >> </button>
+    <button class="next"> >> </button>
   </div>
   <div class="slid">
-    <button class="prev" onclick="plusSlides(-1)"> << </button>
+    <button class="prev"> << </button>
     <img src="img/slid1.jpg" alt="Error">
-    <button class="next" onclick="plusSlides(1)"> >> </button>
+    <button class="next"> >> </button>
   </div>
   <div class="slid">
-    <button class="prev" onclick="plusSlides(-1)"> << </button>
+    <button class="prev"> << </button>
     <img src="img/slid2.jpg" alt="Error">
   </div>
 </div>
+
+<h1>Table</h1>
+<div id="usersTable"></div>
+
 <script src="https://kit.fontawesome.com/a92211bf3b.js" crossorigin="anonymous"></script>
 <script src="js/modal.js"></script>
 <script src="js/burger.js"></script>
 <script src="js/carousel.js"></script>
+<script src="js/data-tables.js"></script>
 </body>
 </html>
