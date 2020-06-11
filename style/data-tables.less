@@ -1,0 +1,28 @@
+@thead-color: rgba(255, 99, 71, 0.6);
+@border-color: rgb(120, 120, 120);
+@tcell-color: rgba(255, 99, 71, 0.2);
+@tcell-hover-color: rgba(255, 99, 71, 0.4);
+
+#usersTable {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+table {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  & thead { background-color: @thead-color; }
+  & td, th {
+    font-family: 'Balsamiq Sans', cursive;
+    border: 1px solid @border-color;
+    padding: 10px 40px;
+    background-color: @tcell-color;
+  }
+  & tbody tr:hover {
+    background-color: @tcell-hover-color;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+  & .align-right { text-align: right; }
+}
