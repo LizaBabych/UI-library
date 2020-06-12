@@ -12,7 +12,16 @@ table {
   margin-top: 30px;
   margin-bottom: 30px;
   border-collapse: collapse;
-  & thead { background-color: @thead-color; }
+  & thead {
+    background-color: @thead-color;
+    & button {
+      background-color: lighten(@thead-color, 10%);
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
   & td, th {
     font-family: 'Balsamiq Sans', cursive;
     border: 1px solid @border-color;
@@ -21,7 +30,6 @@ table {
   }
   & tbody tr:hover {
     background-color: @tcell-hover-color;
-    border: 2px solid black;
     cursor: pointer;
   }
   & .align-right { text-align: right; }
