@@ -1,6 +1,7 @@
-@menu-color: rgba(0, 153, 255, 0.9);
+@menu-color: rgb(106, 90, 205);
 @header-color: rgba(92, 200, 255, 0.6);
 @secondary-header-color: rgba(0, 135, 255, 1);
+@header-width: 80px;
 
 .header {
   position: fixed;
@@ -13,11 +14,18 @@
   z-index: 1;
 }
 
+.header-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.header-burger i { color:white; }
+
 .header-body {
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: @header-width;
   align-items: center;
   & img {
     border-radius: 50%;
@@ -49,27 +57,34 @@
 @media (max-width: 767px) {
   .header-list {
     display: block;
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
     background-color: @menu-color;
-    padding-right: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
     & li {
-      margin: 0 0 20px 0;
-      &:hover {
-        background-color: darken(@menu-color, 7%);
-      }
+      padding: 20px 0;
+      left: 0;
     }
   }
 
-  .header-burger { display: block; }
+  .header-burger {
+    display: block;
+    position: relative;
+  }
 
   .header-menu {
     display: none;
     position: fixed;
-    top: 0;
-    right: 20px;
-    padding: 60px 0 0 0;
+    top: 40px;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  .header-menu-close {
+    display: block;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 }
