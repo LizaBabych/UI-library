@@ -4,33 +4,48 @@
 @tcell-hover-color: rgba(255, 99, 71, 0.4);
 
 #usersTable {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-table {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-collapse: collapse;
-  & thead {
-    background-color: @thead-color;
-    & button {
-      background-color: lighten(@thead-color, 10%);
-      border: none;
-      &:hover {
-        cursor: pointer;
-      }
+  margin-left: 28%;
+  font-family: 'Balsamiq Sans', cursive;
+  .table-search {
+    display: flex;
+    flex-direction: row;
+  }
+  .table-search-input {
+    height: 30px;
+    width: 350px;
+    background-color: LightGray;
+    &:focus {
+      background-color: white;
     }
   }
-  & td, th {
-    font-family: 'Balsamiq Sans', cursive;
-    border: 1px solid @border-color;
-    padding: 10px 40px;
-    background-color: @tcell-color;
+  .table-search-label {
+    margin-right: 25px;
+    font-size: 30px;
   }
-  & tbody tr:hover {
-    background-color: @tcell-hover-color;
-    cursor: pointer;
+  & table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    & thead {
+      background-color: @thead-color;
+      & button {
+        background-color: lighten(@thead-color, 10%);
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    & td, th {
+      border: 1px solid @border-color;
+      padding: 10px 40px;
+      background-color: @tcell-color;
+      text-align: center;
+    }
+    & tbody tr:hover {
+      background-color: @tcell-hover-color;
+      cursor: pointer;
+    }
+    & .align-right { text-align: right; }
   }
-  & .align-right { text-align: right; }
 }
