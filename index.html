@@ -1,181 +1,213 @@
- parent: '#usersTable',
-  columns: [
-    {title: '№', value: '_index'},
-    {title: 'Создано', value: 'createAt'},
-    {title: 'Имя', value: 'name'},
-    {title: 'Аватар', value: 'avatar'},
-    {title: 'Фамилия', value: 'surname', sortable: true},
-    {title: 'Возраст', value: 'age', type: 'number', sortable: true},
-    {title: 'Возраст', value: (user) => calculateAge(user.birthday), type: 'age', sortable: true},
-  ],
-  search: {
-    fields: ['name', 'surname'],
-@@ -13,7 +15,8 @@ const config1 = {
-      v => toKeyboardLayout(v, 'ru'),
-      v => toKeyboardLayout(v, 'en')
-    ]
-  }
-  },
-  apiUrl: "https://5e938231c7393c0016de48e6.mockapi.io/api/ps5/players"
-};
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@200&display=swap" rel="stylesheet">
+  <link href="style/grid.css" rel="stylesheet">
+  <link href="style/button.css" rel="stylesheet">
+  <link href="style/modal.css" rel="stylesheet">
+  <link href="style/burger.css" rel="stylesheet">
+  <link href="style/carousel.css" rel="stylesheet">
+  <link href="style/data-tables.css" rel="stylesheet">
+  <title>UI-library</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header-body">
+      <a href="#" class="header-logo">
+        <img class="header-logo" src="img/logo.jpg" alt="Error">
+      </a>
+      <nav class="header-menu" id="menu">
+        <ul class="header-list">
+          <li><a href="#" class="header-link">Menu 1</a></li>
+          <li><a href="#" class="header-link">Menu 2</a></li>
+          <li><a href="#" class="header-link">Menu 3</a></li>
+        </ul>
+      </nav>
+      <div class="header-burger"><i class="fas fa-bars" id="openBurger"></i></div>
+    </div>
+  </div>
+  <h1>Grid</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+    </div>
+  </div>
 
-const users = [
-@@ -27,7 +30,9 @@ const users = [
-  {id: 30051, name: 'Руслан', surname: 'Иванов', age: 25},
-];
+  <div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+      <div class="col-2"></div>
+    </div>
+  </div>
 
-dataTable(config1, users);
-dataTable(config1);
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+    </div>
+  </div>
 
-//dataTable(config1, users);
+  <div class="container">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+  </div>
 
-function dataTable(config, users) {
-  let table = document.createElement('table');
-@@ -38,18 +43,48 @@ function dataTable(config, users) {
-  let row;
-  if(config.search) {
-    addSearchForm(parent, searchForm, searchInput, searchLabel);
-    let searchUser;
-    addInputListener(table, users, searchInput, config, searchUser);
-    addHeaderOfTable(table, config, row);
-    addInputListener(table, users, searchInput, config);
-    addHeaderOfTable(table, config, row, users);
-  }
-  parent.appendChild(table);
-  renderTable(usersTable.querySelector('table'), users);
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-6"></div>
+      <div class="col-6"></div>
+    </div>
+  </div>
 
-async function dataTable(config) {
-  let table = document.createElement('table');
-  let parent = document.querySelector(config.parent);
-  let searchForm = document.createElement('div');
-  let searchInput = document.createElement('input');
-  let searchLabel = document.createElement('label');
-  let row, users;
-  if(config.apiUrl){
-    users = await getDataFromURL(config.apiUrl);
-  }
-  if(config.search) {
-    addSearchForm(parent, searchForm, searchInput, searchLabel);
-    addInputListener(table, users, searchInput, config);
-    addHeaderOfTable(table, config, row, users);
-  }
-  parent.appendChild(table);
-  renderTable(usersTable.querySelector('table'), users);
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-12"></div>
+    </div>
+  </div>
 
-function addInputListener(table, users, input, config, searchUser) {
-async function getDataFromURL(url) {
-  try {
-    let response = await fetch(url, {method: "GET"});
-    if (!response.ok) {
-        console.log("Error: " + response.status);
-    }
-    return await response.json();
-  } catch (error) {
-      console.log("Error: " + error.message);
-  }
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-11"></div>
+    </div>
+  </div>
 
-function addInputListener(table, users, input, config) {
-	input.addEventListener('input', () => {
-    let tbody = table.querySelector('tbody');
-    searchUser = findDefineElements(input.value.trim(), users, config.search.fields, config.search.filters);
-    let searchUser = findDefineElements(input.value.trim(), users, config.search.fields, config.search.filters);
-    tbody.remove();
-		renderTable(table, searchUser);
-	});
-@@ -90,19 +125,19 @@ function addSearchForm(parent, searchForm, searchInput, searchLabel) {
-  parent.appendChild(searchForm);
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-10"></div>
+    </div>
+  </div>
 
-function addHeaderOfTable(table, config, row) {
-function addHeaderOfTable(table, config, row, data) {
-  let columns = config.columns;
-	const headTable = table.createTHead().insertRow(0);
-	columns.forEach((item) => {
-		row = headTable.appendChild(document.createElement('th'));
-		row.setAttribute('id', columns.value);
-    row.innerText = item.title;
-    if (item.type == true) row.setAttribute('class', 'align-right');
-    addSortingButton(item, row, table);
-    addSortingButton(item, row, table, data);
-	});
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-9"></div>
+    </div>
+  </div>
 
-function addSortingButton(item, row, table) {
-function addSortingButton(item, row, table, data) {
-  for (let index in item) {
-    if (index === 'sortable') {
-      let buttonSortDown = document.createElement('button');
-@@ -111,18 +146,18 @@ function addSortingButton(item, row, table) {
-      addIconsToButton(buttonSortUp, buttonSortDown, buttonSort);
-      row.appendChild(buttonSort);
-      buttonSort.addEventListener('click', (e) =>{
-        sorting(table, item, 1);
-        sorting(table, item, 1, data);
-        row.appendChild(buttonSortUp);
-        buttonSort.remove();
-      });
-      buttonSortUp.addEventListener('click', (e) =>{
-        sorting(table, item, -1);
-        sorting(table, item, -1, data);
-        buttonSortUp.remove();
-        row.appendChild(buttonSortDown);
-      });
-      buttonSortDown.addEventListener('click', (e) =>{
-        table.querySelector('tbody').remove();
-        renderTable(table, users);
-        renderTable(table, data);
-        buttonSortDown.remove();
-        row.appendChild(buttonSort);
-      });
-@@ -142,9 +177,9 @@ function addIconsToButton(buttonSortUp, buttonSortDown, buttonSort) {
-  buttonSortDown.appendChild(iconDown);
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-8"></div>
+    </div>
+  </div>
 
-function sorting(table, index, koef) {
-function sorting(table, index, koef, data) {
-  let tbody = table.querySelector('tbody');
-  let sortData = [...users];
-  let sortData = [...data];
-  if(index.type === 'number') {
-    sortData.sort((u1, u2) => (u1.age - u2.age) * koef);
-  } else {
-@@ -158,12 +193,12 @@ function renderTable(table, data) {
-  let tbody = table.appendChild(document.createElement('tbody'));
-  let _index = 1;
-  let j;
-  let row, cell;
-  data.forEach((item, i) => {
-    let row, cell;
-    j = 1;
-		row = tbody.insertRow(i);
-		cell = row.insertCell(0);
-		cell.innerHTML = _index++;
-    row = tbody.insertRow(i);
-    cell = row.insertCell(0);
-    cell.innerHTML = _index++;
-    setTableAttributes(row, item, j);
-  });
-}
-@@ -172,8 +207,17 @@ function setTableAttributes(row, users, num) {
-  for (let index in users) {
-    if (index != 'id') {
-      let cell = row.insertCell(num++);
-      if (typeof users[index] === 'number') cell.setAttribute('class', 'align-right');
-      cell.innerHTML = users[index];
-      if (typeof users[index] === 'number')
-        cell.setAttribute('class', 'align-right');
-      if (index == 'createdAt') {
-        cell.innerHTML = users[index].slice(0, 10);
-      } else if (index == 'avatar') {
-          let ava = document.createElement('img');
-          ava.setAttribute('src', users.avatar);
-          cell.appendChild(ava);
-      } else {
-          cell.innerHTML = users[index];
-      }
-    }
-  }
-}
+  <div class="container">
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-7"></div>
+    </div>
+  </div>
+
+<h1>Button</h1>
+<div class="button button-primary"><a href="#">Primary</a></div>
+ <div class="button button-secondary">Secondary</div>
+ <div class="button button-success">Success</div>
+ <div class="button button-warning">Warning</div>
+ <div class="button button-danger">Danger</div>
+ <div class="button button-info">Info</div>
+ <div class="button button-dark">Dark</div>
+ <div class="button button-light">Light</div><br>
+
+ <div class="button button-primary disabled">Primary disabled</div>
+ <div class="button button-secondary disabled">Secondary disabled</div>
+ <div class="button button-success disabled">Success disabled</div>
+ <div class="button button-warning disabled">Warning disabled</div>
+ <div class="button button-danger disabled">Danger disabled</div>
+ <div class="button button-info disabled">Info disabled</div>
+ <div class="button button-dark disabled">Dark disabled</div>
+ <div class="button button-light disabled">Light disabled</div><br>
+
+ <div class="button button-lg button-primary"><i class="fas fa-home"></i></div>
+ <div class="button button-lg button-secondary">Secondary</div>
+ <div class="button button-lg button-success">Success</div>
+ <div class="button button-lg button-warning">Warning</div>
+ <div class="button button-lg button-danger">Danger</div>
+ <div class="button button-lg button-info">Info</div>
+ <div class="button button-lg button-dark">Dark</div>
+ <div class="button button-lg button-light">Light</div><br>
+
+ <div class="button button-sm button-primary">Primary</div>
+ <div class="button button-sm button-secondary">Secondary</div>
+ <div class="button button-sm button-success">Success</div>
+ <div class="button button-sm button-warning">Warning</div>
+ <div class="button button-sm button-danger">Danger</div>
+ <div class="button button-sm button-info">Info</div>
+ <div class="button button-sm button-dark">Dark</div>
+ <div class="button button-sm button-light">Light</div>
+
+<h1>Modal</h1>
+<div class="button button-lg button-primary modal-trigger" data-target="send">
+  Open first example of modal window
+</div>
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-head">
+      <h2>Opened first window</h2>
+    </div>
+    <div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    At asperiores fuga quos, porro impedit dolorum quidem ipsa,
+    esse maxime odio veniam explicabo ut deleniti autem, alias ea quisquam sit exercitationem.</p></div></br>
+    <div class="modal-footer">
+      <div class="button button-secondary modal-close">Okey</div>
+    </div>
+  </div>
+</div>
+
+<div class="button button-lg button-primary modal-trigger" data-target="send">
+  Open second example of modal window
+</div>
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-head">
+      <h2>Opened second window</h2>
+    </div>
+    <div class="modal-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    At asperiores fuga quos, porro impedit dolorum quidem ipsa,
+    esse maxime odio veniam explicabo ut deleniti autem, alias ea quisquam sit exercitationem.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    At asperiores fuga quos, porro impedit dolorum quidem ipsa,
+    esse maxime odio veniam explicabo ut deleniti autem, alias ea quisquam sit exercitationem.</p>
+    </div></br>
+    <div class="modal-footer">
+      <div class="button button-danger modal-close">Close</div>
+    </div>
+  </div>
+</div>
+
+<h1>Carousel</h1>
+<div id="slider"></div>
+
+<h1>Table</h1>
+<div id="usersTable"></div>
+
+<script src="https://kit.fontawesome.com/a92211bf3b.js" crossorigin="anonymous"></script>
+<script src="js/modal.js"></script>
+<script src="js/burger.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/data-tables.js"></script>
+</body>
+</html>
