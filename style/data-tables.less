@@ -4,9 +4,9 @@
 @tcell-hover-color: rgba(255, 99, 71, 0.4);
 
 #usersTable {
-  margin-left: 28%;
   font-family: 'Balsamiq Sans', cursive;
   .table-search {
+    margin-left: 20%;
     display: flex;
     flex-direction: row;
   }
@@ -23,6 +23,7 @@
     font-size: 30px;
   }
   & table {
+    margin-left: 20%;
     margin-top: 30px;
     margin-bottom: 30px;
     border-collapse: collapse;
@@ -38,7 +39,7 @@
     }
     & td, th {
       border: 1px solid @border-color;
-      padding: 10px 40px;
+      padding: 10px 10px;
       background-color: @tcell-color;
       text-align: center;
     }
@@ -47,5 +48,12 @@
       cursor: pointer;
     }
     & .align-right { text-align: right; }
+  }
+}
+
+
+@media (max-width: 767px) {
+  #usersTable {
+    margin-left: 10%;
   }
 }
