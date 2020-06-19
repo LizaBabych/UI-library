@@ -56,13 +56,12 @@ async function dataTable(config) {
   let parent = document.querySelector(config.parent);
   let searchForm = document.createElement('div');
   let searchInput = document.createElement('input');
-  let searchLabel = document.createElement('label');
   let row, users;
   if(config.apiUrl){
     users = await getDataFromURL(config.apiUrl);
   }
   if(config.search) {
-    addSearchForm(parent, searchForm, searchInput, searchLabel);
+    addSearchForm(parent, searchForm, searchInput);
     addInputListener(table, users, searchInput, config);
   }
   addHeaderOfTable(table, config, users);
@@ -123,7 +122,8 @@ function findDefineElements(value, users, fields, filters) {
   return searchUser;
 }
 
-function addSearchForm(parent, searchForm, searchInput, searchLabel) {
+function addSearchForm(parent, searchForm, searchInput) {
+  let searchLabel = document.createElement('label');
   searchForm.setAttribute('class', 'table-search');
   searchInput.setAttribute('type', 'text');
   searchInput.setAttribute('class', 'table-search-input');
@@ -211,35 +211,37 @@ function renderTable(table, data) {
     cell = row.insertCell(0);
     cell.innerHTML = _index++;
     setTableAttributes(row, item, j);
-    createAtionButton(row, i, table, data);
+    for (let index in item) {
+      if (index === 'id') {
+        createAtionButton(row, table, data, item[index]);
+      }
+    }
   });
 }
 
-function createAtionButton(row, id, table, data) {
+function createAtionButton(row, table, data, id) {
   let cellAction = document.createElement('td');
   let deleteButton = document.createElement('div');
   deleteButton.setAttribute('class', "button button-danger");
   deleteButton.innerHTML = "Удалить";
-  for (let index in data) {
-    if (index == 'id') {
-      console.log(data[index]);
-    }
-  }
   cellAction.appendChild(deleteButton);
   row.appendChild(cellAction);
-  addDeleteRowListener(deleteButton, table);
+  addDeleteRowListener(deleteButton, table, id);
 }
 
-function addDeleteRowListener(deleteButton, table) {
-  deleteButton.addEventListener('click', (e) =>{
-    let response = deleteDataFromURL(config1.apiUrl + "/" + id);
-//     let users = getDataFromURL(config1.apiUrl);
-//     renderTable(table, users);
+async function addDeleteRowListener(deleteButton, table, id) {
+  deleteButton.addEventListener('click', async (e) =>{
+    console.log(id);
+    let response = await deleteDataFromURL(config1.apiUrl + "/" + id);
+    let users = await getDataFromURL(config1.apiUrl);
+    console.log(users);
+    let tbody = table.querySelector('tbody');
+    tbody.remove();
+    renderTable(table, users);
   });
 }
 
 async function deleteDataFromURL(url) {
-  console.log(url);
   try {
     let response = await fetch(url, {method: "DELETE"});
     if (!response.ok) {
