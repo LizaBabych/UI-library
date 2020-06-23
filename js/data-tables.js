@@ -1,13 +1,13 @@
 const config1 = {
   parent: '#usersTable',
   columns: [
-    {title: '№', value: '_index'},
-    {title: 'Создано', value: 'createAt'},
-    {title: 'Имя', value: 'name'},
-    {title: 'Аватар', value: 'avatar'},
-    {title: 'Фамилия', value: 'surname', sortable: true},
-    {title: 'Возраст', value: (user) => calculateAge(user.birthday), sortable: true},
-    {title: 'Действия', type: 'actions'},
+    {title: '№', value: '_index', editable: false},
+    {title: 'Создано', value: 'createAt', editable: false},
+    {title: 'Имя', value: 'name', editable: true},
+    {title: 'Аватар', value: 'avatar', type: 'url-jpg', editable: false},
+    {title: 'Фамилия', value: 'surname', sortable: true, editable: true},
+    {title: 'Возраст', value: (user) => calculateAge(user.birthday), sortable: true, editable: true},
+    {title: 'Действия', type: 'actions', editable: false},
   ],
   search: {
     fields: ['name', 'surname'],
@@ -20,7 +20,7 @@ const config1 = {
   apiUrl: "https://5e938231c7393c0016de48e6.mockapi.io/api/ps5/players"
 };
 
-const users = [
+/*const users = [
   {id: 30050, name: 'Вася', surname: 'Петров', age: 12},
   {id: 30051, name: 'Василий', surname: 'Васечкин', age: 15},
   {id: 30050, name: 'Иван', surname: 'Абрамов', age: 13},
@@ -29,13 +29,14 @@ const users = [
   {id: 30051, name: 'Роман', surname: 'Мишкин', age: 10},
   {id: 30050, name: 'Дмитрий', surname: 'Цветочек', age: 19},
   {id: 30051, name: 'Руслан', surname: 'Иванов', age: 25},
-];
+];*/
+let newBut;
 
 dataTable(config1);
 
 //dataTable(config1, users);
 
-function dataTable(config, users) {
+/*function dataTable(config, users) {
   let table = document.createElement('table');
   let parent = document.querySelector(config.parent);
   let searchForm = document.createElement('div');
@@ -49,7 +50,7 @@ function dataTable(config, users) {
   addHeaderOfTable(table, config, users);
   parent.appendChild(table);
   renderTable(usersTable.querySelector('table'), users);
-}
+}*/
 
 async function dataTable(config) {
   let table = document.createElement('table');
@@ -57,11 +58,12 @@ async function dataTable(config) {
   let searchForm = document.createElement('div');
   let searchInput = document.createElement('input');
   let row, users;
+  let addButton = document.createElement('div');
   if(config.apiUrl){
     users = await getDataFromURL(config.apiUrl);
   }
   if(config.search) {
-    addSearchForm(parent, searchForm, searchInput);
+    addSearchForm(parent, searchForm, searchInput, addButton, table);
     addInputListener(table, users, searchInput, config);
   }
   addHeaderOfTable(table, config, users);
@@ -90,7 +92,7 @@ function calculateAge(num){
       (currentDate.getDate() - day) / 365;
   if (age < 1)
     return "До 1 года";
-  return age.toFixed(2) + " года";
+  return age.toFixed(0) + " года";
 }
 
 function addInputListener(table, users, input, config) {
@@ -122,7 +124,7 @@ function findDefineElements(value, users, fields, filters) {
   return searchUser;
 }
 
-function addSearchForm(parent, searchForm, searchInput) {
+function addSearchForm(parent, searchForm, searchInput, addButton, table) {
   let searchLabel = document.createElement('label');
   searchForm.setAttribute('class', 'table-search');
   searchInput.setAttribute('type', 'text');
@@ -131,9 +133,157 @@ function addSearchForm(parent, searchForm, searchInput) {
   searchLabel.innerText = "Search";
   searchLabel.setAttribute('for', 'search');
   searchLabel.setAttribute('class', 'table-search-label');
+  addButton.setAttribute('class', 'button button-primary table-add-button modal-trigger');
+  addButton.innerText = "Добавить";
   searchForm.appendChild(searchLabel);
   searchForm.appendChild(searchInput);
+  searchForm.appendChild(addButton);
   parent.appendChild(searchForm);
+  createModalAdd(table, searchForm);
+  addModalForm();
+}
+
+/*  Надо как-то его экспортировать  */
+function addModalForm() {
+  const send = document.querySelectorAll(".modal-trigger");
+  const closeModal = document.querySelectorAll(".modal-close");
+  send.forEach((item, i) => {
+    item.addEventListener('click', function() {
+      item.nextElementSibling.style.display = "block";
+      newBut = document.createElement("button");
+      newBut.textContent = "X";
+      item.nextElementSibling.firstElementChild.firstElementChild.appendChild(newBut);
+      newBut.addEventListener('click', function(){closeModalWindow(closeModal[i])});
+    });
+  });
+  closeModal.forEach((item, i) => {
+    item.addEventListener('click', function(){closeModalWindow(closeModal[i])});
+  });
+}
+
+function closeModalWindow(id) {
+  id.parentElement.parentElement.parentElement.style.display = "none";
+  newBut.remove();
+}
+
+/*  ---------------------------------------------  */
+
+function createModalAdd(table, searchForm) {
+  let modal = document.createElement('div');
+  modal.setAttribute('class', 'modal');
+
+  let modalContent = document.createElement('div');
+  modalContent.setAttribute('class', 'modal-content');
+
+  let modalHead = document.createElement('div');
+  modalHead.setAttribute('class', 'modal-head');
+  modalHeadH2 = document.createElement('h2');
+  modalHeadH2.innerText = "Добавить: ";
+
+  let modalBody = document.createElement('div');
+  modalBody.setAttribute('class', 'modal-body');
+  let modalForm = document.createElement('form');
+  modalForm.setAttribute('class', 'modal-form');
+  modalForm.setAttribute('action', '');
+
+  let modalFooter = document.createElement('div');
+  modalFooter.setAttribute('class', 'modal-footer');
+  let closeModal = document.createElement('div');
+  closeModal.setAttribute('class', 'button button-success modal-close');
+  closeModal.innerText = "Сохранить";
+
+  modalFooter.appendChild(closeModal);
+  modalHead.appendChild(modalHeadH2);
+  modalContent.appendChild(modalHead);
+  modalBody.appendChild(modalForm);
+  modalContent.appendChild(modalBody);
+  modalContent.appendChild(modalFooter);
+  modal.appendChild(modalContent);
+  searchForm.appendChild(modal);
+
+  addForm(modalForm, table, closeModal);
+}
+
+async function addForm(modalForm, table, closeModal) {
+  /* EDITABLE */
+  config1.columns.forEach((item, i) => {
+    for(index in item) {
+      if(index == 'editable' && item.editable == true){
+        console.log(item.title);
+      }
+    }
+  });
+  /*-----------------------------*/
+//  let now = new Date();
+
+  let body = {
+    //createdAt: now.getUTCDate(),
+    name: "",
+    surname: "",
+    birthday: 0
+  };
+
+  let modalLabelName = document.createElement('label');
+  modalLabelName.setAttribute('for', 'name');
+  modalLabelName.innerText = 'Имя: ';
+  let modalInputName = document.createElement('input');
+  modalInputName.setAttribute('type', 'text');
+  modalInputName.addEventListener('input', () => {
+      body.name = modalInputName.value;
+  });
+
+  let modalLabelSname = document.createElement('label');
+  modalLabelSname.setAttribute('for', 'sname');
+  modalLabelSname.innerText = 'Фамилия: ';
+  let modalInputSname = document.createElement('input');
+  modalInputSname.setAttribute('type', 'text');
+  modalInputSname.addEventListener('input', () => {
+      body.surname = modalInputSname.value;
+  });
+
+  let modalLabelAge = document.createElement('label');
+  modalLabelAge.setAttribute('for', 'age');
+  modalLabelAge.innerText = 'Дата рождения: ';
+  let modalInputAge = document.createElement('input');
+  modalInputAge.setAttribute('type', 'date');
+  modalInputAge.setAttribute('max', '2018-12-31');
+  modalInputAge.addEventListener('input', () => {
+      body.birthday = modalInputAge.value;
+  });
+
+  modalForm.appendChild(modalLabelName);
+  modalForm.appendChild(modalInputName);
+  modalForm.appendChild(modalLabelSname);
+  modalForm.appendChild(modalInputSname);
+  modalForm.appendChild(modalLabelAge);
+  modalForm.appendChild(modalInputAge);
+
+  closeModal.addEventListener('click', async (e) =>{
+    let response = await addDataToURL(config1.apiUrl, body);
+    let users = await getDataFromURL(config1.apiUrl);
+    let tbody = table.querySelector('tbody');
+    tbody.remove();
+    renderTable(table, users);
+  });
+
+}
+
+async function addDataToURL(url, body) {
+  try {
+    let response = await fetch(url, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    });
+    if (!response.ok) {
+        console.log("Error: " + response.status);
+    }
+    return await response.json();
+  } catch (error) {
+      console.log("Error: " + error.message);
+  }
 }
 
 function addHeaderOfTable(table, config, data) {
@@ -231,10 +381,8 @@ function createAtionButton(row, table, data, id) {
 
 async function addDeleteRowListener(deleteButton, table, id) {
   deleteButton.addEventListener('click', async (e) =>{
-    console.log(id);
     let response = await deleteDataFromURL(config1.apiUrl + "/" + id);
     let users = await getDataFromURL(config1.apiUrl);
-    console.log(users);
     let tbody = table.querySelector('tbody');
     tbody.remove();
     renderTable(table, users);
