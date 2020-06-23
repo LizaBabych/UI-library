@@ -1,63 +1,77 @@
-@modal-width: 500px;
+@thead-color: rgba(255, 99, 71, 0.6);
+@border-color: rgb(120, 120, 120);
+@tcell-color: rgba(255, 99, 71, 0.2);
+@tcell-hover-color: rgba(255, 99, 71, 0.4);
 
-body {
-  background-color: lighten(LightBlue, 17%);
-  margin-top: 100px;
-  margin-left: 0;
-}
-
-h1 {
-  padding: 30px 0 30px 30px;
-  background-color: LightBlue;
-  margin: 20px 0;
-}
-
-.modal-content {
-  background-color: rgb(240, 240, 240);
-  position: fixed;
-  border: 1px solid gray;
-  border-radius: 5px;
-  width: @modal-width;
-  margin: 15% 30%;
-
-  & h2 {
-    margin: 0 0 20px 0;
-    padding-left: 10px;
+#usersTable {
+  font-family: 'Balsamiq Sans', cursive;
+  .table-search {
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    .table-search-input {
+      height: 30px;
+      width: 350px;
+      background-color: LightGray;
+      &:focus {
+        background-color: white;
+      }
+    }
+    .table-search-label {
+      margin-right: 25px;
+      font-size: 30px;
+    }
+    .table-add-button {
+      margin-left: 20px;
+    }
+  }
+  & table {
+    margin-left: 20%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    & thead {
+      background-color: @thead-color;
+      & button {
+        background-color: lighten(@thead-color, 10%);
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    & td, th {
+      border: 1px solid @border-color;
+      padding: 10px 10px;
+      background-color: @tcell-color;
+      text-align: center;
+    }
+    & tbody tr:hover {
+      background-color: @tcell-hover-color;
+      cursor: pointer;
+    }
+    & .align-right { text-align: right; }
   }
 }
 
-button {
-  background-color: rgb(180, 180, 180);
+.table-add-button {
+  margin: 0;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.modal-head {
-   background-color: rgb(180, 180, 180);
-   display: flex;
-   padding: 5px 5px 0 0;
-   justify-content: space-between;
-   align-items: flex-start;
-   border-bottom: 1px solid black;
-   font-size: 18px;
-}
-
-.modal-body {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.modal-footer {
+.modal-form {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 100px;
+  & input {
+    margin-bottom: 10px;
+    height: 20px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  #usersTable {
+    margin-left: 10%;
+  }
 }
