@@ -29,6 +29,17 @@
       <div class="header-burger"><i class="fas fa-bars" id="openBurger"></i></div>
     </div>
   </div>
+  <h1>Input</h1>
+  <div id="app">
+    <my-input
+        v-for="q in questions" // это служебный атрибут для циклов
+        :key="q.title"         // это служебный атрибут для циклов
+        :type="q.type"
+        :title="q.title"
+        :placeholder="q.placeholder"
+        :required="q.required"
+    />
+  </div>
   <h1>Grid</h1>
   <div class="container">
     <div class="row">
@@ -205,12 +216,11 @@
 <h1>Table</h1>
 <div id="usersTable"></div>
 
-<h1>input</h1>
-
 <script src="https://kit.fontawesome.com/a92211bf3b.js" crossorigin="anonymous"></script>
 <script src="js/modal.js"></script>
 <script src="js/burger.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/data-tables.js"></script>
+<script src="js/input.js"></script>
 </body>
 </html>
