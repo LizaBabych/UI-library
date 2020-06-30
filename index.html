@@ -11,6 +11,7 @@
   <link href="style/burger.css" rel="stylesheet">
   <link href="style/carousel.css" rel="stylesheet">
   <link href="style/data-tables.css" rel="stylesheet">
+  <link href="style/input.css" rel="stylesheet">
   <title>UI-library</title>
 </head>
 <body>
@@ -32,14 +33,28 @@
   <h1>Input</h1>
   <div id="app">
     <my-input
-        v-for="q in questions" // это служебный атрибут для циклов
-        :key="q.title"         // это служебный атрибут для циклов
+        v-for="q in questions"
+        :key="q.title"
         :type="q.type"
         :title="q.title"
         :placeholder="q.placeholder"
         :required="q.required"
     />
   </div>
+  <script src="js/input.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      questions: [
+        { title: "Как тебя зовут?", placeholder: "Иван" },
+        { title: "Сколько тебе лет?", placeholder: "15", type: "number" },
+        { title: "Твой email", placeholder: "ivan@example.com", required: true }
+      ]
+    }
+  })
+  </script>
+
   <h1>Grid</h1>
   <div class="container">
     <div class="row">
@@ -221,6 +236,5 @@
 <script src="js/burger.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/data-tables.js"></script>
-<script src="js/input.js"></script>
 </body>
 </html>
