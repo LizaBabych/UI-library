@@ -5,12 +5,26 @@ Vue.component('my-input', {
 			default: 'Text',
 			required: true
 		},
+		type: {
+			type: String,
+			default: 'Text',
+			required: false
+		},
+		placeholder: {
+			type: String,
+			default: 'Text',
+			required: false
+		},
+		required: {
+			type: Boolean,
+			default: false,
+			required: true
+		}
 	},
 	template: `
 	<div class="my-input-form">
-		<label class="my-label">{{title}} <span v-if="required">*</span>
+		<label class="my-label"> {{title}} <span v-if="required">*</span>
 		<input class="my-input"
-	  :class="getSpecificInputClass"
 		:placeholder="placeholder"
 		:required="required"
 		:type="type"
