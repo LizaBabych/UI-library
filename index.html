@@ -33,12 +33,13 @@
   <h1>Input</h1>
   <div id="app">
     <my-input
-        v-for="q in questions"
-        :key="q.title"
-        :type="q.type"
-        :title="q.title"
-        :placeholder="q.placeholder"
-        :required="q.required"
+      v-for="q in questions"
+      :key="q.title"
+      :type="q.type"
+      :title="q.title"
+      :placeholder="q.placeholder"
+      :required="q.required"
+      v-model="q.value"
     />
   </div>
   <script src="js/input.js"></script>
@@ -54,7 +55,6 @@
     }
   })
   </script>
-
   <h1>Grid</h1>
   <div class="container">
     <div class="row">
@@ -190,7 +190,7 @@
 <div class="button button-lg button-primary modal-trigger" data-target="send">
   Open first example of modal window
 </div>
-<div class="modal">
+<div class="modal" id="send">
   <div class="modal-content">
     <div class="modal-head">
       <h2>Opened first window</h2>
@@ -207,7 +207,7 @@
 <div class="button button-lg button-primary modal-trigger" data-target="send">
   Open second example of modal window
 </div>
-<div class="modal">
+<div class="modal" id="send">
   <div class="modal-content">
     <div class="modal-head">
       <h2>Opened second window</h2>

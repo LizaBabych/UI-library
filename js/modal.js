@@ -1,9 +1,9 @@
 //addModalForm();
 
 function addModalForm() {
-  let send = document.querySelectorAll(".modal-trigger");
-  let closeModal = document.querySelectorAll(".modal-close");
-  let newButton = document.createElement("button");
+  const send = document.querySelectorAll(".modal-trigger");
+  const closeModal = document.querySelectorAll(".modal-close");
+  const newButton = document.createElement("button");
   newButton.textContent = "X";
 
   send.forEach((item, i) => {

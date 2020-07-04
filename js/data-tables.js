@@ -18,7 +18,37 @@ const config1 = {
   apiUrl: "https://5e938231c7393c0016de48e6.mockapi.io/api/ps5/players"
 };
 
+const users = [
+  {id: 30050, name: 'Вася', surname: 'Петров', age: 12},
+  {id: 30051, name: 'Вася', surname: 'Васечкин', age: 15},
+  {id: 30050, name: 'Вася', surname: 'Абрамов', age: 13},
+  {id: 30051, name: 'Вася', surname: 'Бровкин', age: 18},
+  {id: 30050, name: 'Вася', surname: 'Каролович', age: 11},
+  {id: 30051, name: 'Вася', surname: 'Мишкин', age: 10},
+  {id: 30050, name: 'Вася', surname: 'Цветочек', age: 19},
+  {id: 30051, name: 'Вася', surname: 'Иванов', age: 25},
+];
+
 dataTable(config1);
+
+//dataTables(config1, users);
+
+function dataTables(config, users) {
+  let table = document.createElement('table');
+  let parent = document.querySelector(config.parent);
+  let searchForm = document.createElement('div');
+  let searchInput = document.createElement('input');
+  let row;
+  let addButton = document.createElement('div');
+  if(config.search) {
+    addSearchForm(parent, searchForm, searchInput, addButton, table, users);
+    addInputListener(table, users, searchInput, config);
+  }
+  addHeaderOfTable(table, config, users);
+  parent.appendChild(table);
+  renderTable(usersTable.querySelector('table'), users);
+  addModalForm();
+}
 
 async function dataTable(config) {
   let table = document.createElement('table');
@@ -37,6 +67,7 @@ async function dataTable(config) {
   addHeaderOfTable(table, config, users);
   parent.appendChild(table);
   renderTable(usersTable.querySelector('table'), users);
+  addModalForm();
 }
 
 async function getDataFromURL(url) {
@@ -140,10 +171,10 @@ function sendRequestToAddUser(closeModal, body, table) {
 function createModal(modalForm, closeModal, table, square, modalTitle) {
   let modal = document.createElement('div');
   modal.setAttribute('class', 'modal');
+  modal.setAttribute('id', 'send');
 
   let modalContent = document.createElement('div');
   modalContent.setAttribute('class', 'modal-content');
-
   let modalHead = document.createElement('div');
   modalHead.setAttribute('class', 'modal-head');
   modalHeadH2 = document.createElement('h2');
@@ -177,10 +208,7 @@ function addForm(modalForm, table, closeModal, body, value) {
   modalInputName.setAttribute('type', 'text');
   if (value!= null) modalInputName.setAttribute('value', value.name);
   modalInputName.addEventListener('input', () => {
-    // if (modalInputName.value == name) {
        body.name = modalInputName.value;
-    // }
-    // else body.name = name;
   });
 
   let modalLabelSname = document.createElement('label');
@@ -190,10 +218,7 @@ function addForm(modalForm, table, closeModal, body, value) {
   modalInputSname.setAttribute('type', 'text');
   if (value!= null) modalInputSname.setAttribute('value', value.surname);
   modalInputSname.addEventListener('input', () => {
-    // if (modalInputSname.value != surname){
        body.surname = modalInputSname.value;
-    // }
-    // else body.surname = surname;
   });
 
   let modalLabelAge = document.createElement('label');
@@ -204,10 +229,7 @@ function addForm(modalForm, table, closeModal, body, value) {
   if (value!= null) modalInputAge.setAttribute('value', value.birthday);
   modalInputAge.setAttribute('max', '2018-12-31');
   modalInputAge.addEventListener('input', () => {
-    // if (modalInputAge.value != birthday){
        body.birthday = modalInputAge.value;
-    // }
-    // else body.birthday = birthday;
   });
 
   modalForm.appendChild(modalLabelName);
@@ -319,21 +341,10 @@ function renderTable(table, data) {
       }
     }
   });
-  addModalForm();
 }
 
 function findDefaultValueById(data, id) {
-  let value = { name: "", surname: "", birthday: 0 }
-  data.forEach((item, i) => {
-    for (index in item) {
-      if(index == "id" && item[index] == id) {
-        value.surname = item.surname;
-        value.name = item.name;
-        value.birthday = item.birthday;
-      }
-    }
-  });
-  return value;
+  return data.find(el => el.id === id);
 }
 
 function createAtionButton(row, table, data, id, value) {
