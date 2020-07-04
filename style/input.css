@@ -34,3 +34,9 @@
 .input-danger {
 	border: 2px solid red;
 }
+
+.invalidExpression {
+  margin-left: 10px;
+  color: red;
+  font-size: 18px;
+}

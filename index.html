@@ -32,6 +32,7 @@
   </div>
   <h1>Input</h1>
   <div id="app">
+    <!-- {{questions[0].value}} -->
     <my-input
       v-for="q in questions"
       :key="q.title"
@@ -39,6 +40,8 @@
       :title="q.title"
       :placeholder="q.placeholder"
       :required="q.required"
+      :pattern="q.pattern"
+      :errormessage="q.errormessage"
       v-model="q.value"
     />
   </div>
@@ -50,7 +53,9 @@
       questions: [
         { title: "Как тебя зовут?", placeholder: "Иван", required: true },
         { title: "Сколько тебе лет?", placeholder: "15", type: "number" },
-        { title: "Твой email", placeholder: "ivan@example.com", required: true}
+        { title: "Твой email", placeholder: "ivan@example.com", required: true,
+          pattern: /^\\w+@(\\w+\\.)+\\w+$/,
+					errormessage: 'Invalid email address.'}
       ]
     }
   })
