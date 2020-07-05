@@ -10,6 +10,10 @@
   font-style: oblique;
 }
 
+.my-input:focus {
+  outline: none;
+}
+
 .my-input {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,11 @@
 
 .input-danger {
 	border: 2px solid red;
+}
+
+.input-danger:hover {
+  border: 2px solid red;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .invalidExpression {
