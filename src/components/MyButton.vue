@@ -1,5 +1,5 @@
 <template>
-	<div v-bind:class="[color, size]"
+	<div class="button" :class="'button-' + color + ' button-' + size"
 	    @click="sendClick()"
 	    >
 			<slot>Press</slot>
@@ -10,11 +10,19 @@
 
 import Vue from 'vue';
 
-export default({
+public type Color = 'danger'| 'success'| 'warning' | 'info'| 'primary' | 'secondary'| 'light' | 'dark';
+public type Size = 'sm' | 'lg';
+
+export default Vue.extend({
   name: 'MyButton',
   props: {
-    size: String,
-    color: String,
+    size: {
+			type: String as () => Size,
+		},
+    color: {
+			type: String as () => Color,
+			default: 'primary',
+		}
   },
   methods: {
     sendClick() {
