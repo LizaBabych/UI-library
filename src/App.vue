@@ -1,22 +1,13 @@
 <template>
   <div id="app">
     <!-- <router-view/> -->
-    <MyButton v-for="(color, idx) in colors"
-							:key="idx"
-							:color="color"
-			> Button
-		</MyButton></br>
-    <MyButton v-for="(color, idx) in colors"
-							:key="idx"
-							:color="color"
-              :size="size"
-			> Button
-		</MyButton></br>
-    <MyButton v-for="(color, idx) in colors"
-							:key="idx"
-							:color="color"
-              :size="lg"
-			> Button
+    <MyButton v-for="i in todos"
+        :key="i.id"
+        :type="i.type"
+        :title="i.title"
+				:color="i.color"
+        :size="i.size"
+			>
 		</MyButton>
   </div>
 </template>
@@ -30,8 +21,17 @@ export default({
   },
   data() {
     return {
-      colors: ['danger', 'success', 'warning', 'info', 'primary', 'secondary', 'light', 'dark'],
-      sizes: ['sm', 'lg'],
+      todos: [
+        { id: 1, title: "Large", color: "success", size: "lg"},
+        { id: 2, title: "Large", color: "primary", size: "lg"},
+        { id: 3, title: "Large", color: "secondary", size: "lg"},
+        { id: 4, title: "Middle", color: "warning"},
+        { id: 5, title: "Middle", color: "danger"},
+        { id: 6, title: "Default"},
+        { id: 7, title: "Small", color: "info", size: "sm"},
+        { id: 8, title: "Small", color: "light", size: "sm"},
+        { id: 9, title: "Small", color: "dark", size: "sm"},
+      ],
     };
   },
 });

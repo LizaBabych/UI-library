@@ -2,7 +2,7 @@
 	<div class="button" :class="'button-' + color + ' button-' + size"
 	    @click="sendClick()"
 	    >
-			<slot>Press</slot>
+			<slot>{{title}}</slot>
 	</div>
 </template>
 
@@ -10,19 +10,26 @@
 
 import Vue from 'vue';
 
-public type Color = 'danger'| 'success'| 'warning' | 'info'| 'primary' | 'secondary'| 'light' | 'dark';
-public type Size = 'sm' | 'lg';
+type Color = 'danger'| 'success'| 'warning' | 'info'| 'primary' | 'secondary'| 'light' | 'dark';
+type Size = 'sm' | 'lg';
 
 export default Vue.extend({
   name: 'MyButton',
   props: {
+		id: {
+			type: Number,
+		},
+		title: {
+			type: String,
+			default: 'Text',
+		},
     size: {
 			type: String as () => Size,
 		},
     color: {
 			type: String as () => Color,
 			default: 'primary',
-		}
+		},
   },
   methods: {
     sendClick() {
