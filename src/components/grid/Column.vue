@@ -8,6 +8,11 @@
 	import Vue from 'vue';
 	export default Vue.extend({
 		name: 'Column',
+		props: {
+			cols: {
+				type: String,
+			},
+		}
 	});
 </script>
 
