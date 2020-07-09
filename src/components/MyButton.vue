@@ -10,9 +10,6 @@
 
 import Vue from 'vue';
 
-type Color = 'danger'| 'success'| 'warning' | 'info'| 'primary' | 'secondary'| 'light' | 'dark';
-type Size = 'sm' | 'lg';
-
 export default Vue.extend({
   name: 'MyButton',
   props: {
@@ -24,10 +21,10 @@ export default Vue.extend({
 			default: 'Text',
 		},
     size: {
-			type: String as () => Size,
+			type: String,
 		},
     color: {
-			type: String as () => Color,
+			type: String,
 			default: 'primary',
 		},
   },
