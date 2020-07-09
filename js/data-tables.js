@@ -135,6 +135,7 @@ function addSearchForm(parent, searchForm, searchInput, addButton, table, users)
   searchLabel.setAttribute('for', 'search');
   searchLabel.setAttribute('class', 'table-search-label');
   addButton.setAttribute('class', 'button button-primary table-add-button modal-trigger');
+  addButton.setAttribute('data-target', "modal0")
   addButton.innerText = "Добавить";
   searchForm.appendChild(searchLabel);
   searchForm.appendChild(searchInput);
@@ -142,7 +143,7 @@ function addSearchForm(parent, searchForm, searchInput, addButton, table, users)
   parent.appendChild(searchForm);
   // let bod = getEditableData(config1.columns, users);
   let body = { name: "", surname: "", birthday: 0 };
-  createModal(modalForm, closeModal, table, searchForm, "Добавить: ");
+  createModal(modalForm, closeModal, table, searchForm, "Добавить: ", 0);
   addForm(modalForm, table, closeModal, body, null);
   sendRequestToAddUser(closeModal, body, table);
 }
@@ -168,10 +169,10 @@ function sendRequestToAddUser(closeModal, body, table) {
   });
 }
 
-function createModal(modalForm, closeModal, table, square, modalTitle) {
+function createModal(modalForm, closeModal, table, square, modalTitle, id) {
   let modal = document.createElement('div');
   modal.setAttribute('class', 'modal');
-  modal.setAttribute('id', 'send');
+  modal.setAttribute('id', 'modal' + id);
 
   let modalContent = document.createElement('div');
   modalContent.setAttribute('class', 'modal-content');
@@ -356,13 +357,14 @@ function createAtionButton(row, table, data, id, value) {
   deleteButton.setAttribute('class', "button button-danger");
   deleteButton.innerHTML = "Удалить";
   editButton.setAttribute('class', "button button-warning modal-trigger");
+  editButton.setAttribute('data-target', 'modal' + id);
   editButton.innerHTML = "Редактировать";
   cellAction.appendChild(deleteButton);
   cellAction.appendChild(editButton);
   row.appendChild(cellAction);
 
   addDeleteRowListener(deleteButton, table, id);
-  createModal(modalForm, closeModal, table, cellAction, "Редактировать (user id " + id + ")");
+  createModal(modalForm, closeModal, table, cellAction, "Редактировать (user id " + id + ")", id);
   let body = { name: "", surname: "", birthday: 0 };
   addForm(modalForm, table, closeModal, body, value);
   addEditRowListener(closeModal, table, data, id, body);
