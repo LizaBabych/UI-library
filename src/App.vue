@@ -1,17 +1,10 @@
 <template>
   <div id="app">
-    <!-- <router-view/> -->
-    <Modal>Open modal</Modal>
+    <router-view/>
   </div>
 </template>
 
-<script>
-import MyButton from '@/components/MyModal.vue';
-export default({
-  components: {
-    MyModal,
-  },
-});
+<script lang="ts">
 </script>
 
 <style lang="less">

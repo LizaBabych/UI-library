@@ -1,6 +1,5 @@
 <templates>
   <div>
-
     <button class="modal-trigger" data-target="modal"
         @click="openModal()">
     		<slot>{{title}}</slot>

@@ -1,12 +1,17 @@
 <template>
-  <div>
-    Vue
+  <div id="app">
+    <Modal>Open modal</Modal>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import MyButton from '@/components/MyModal.vue';
 
-export default {
+export default({
   name: 'Home',
-}
+  components: {
+    MyModal,
+  },
+});
+
 </script>
