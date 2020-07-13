@@ -1,8 +1,14 @@
 <template>
   <div>
+    <button class='prevButton' @click="showSlides(slideNum -= 1, pictures)"> prev </button>
     <div class='slides'>
-      <img src='https://loremflickr.com/320/240/dog' alt='Error'>
+      <img
+        v-for='(img, index) in pictures'
+        :key='index'
+        :src='img' alt='Picture not found'
+      >
     </div>
+    <button class='nextButton' @click="showSlides(slideNum += 1, pictures)"> next </button>
   </div>
 </template>
 
@@ -13,14 +19,24 @@
     props: {
       pictures: {
         type: Array,
-        default: ['https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
-         'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
-         'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
-         'https://loremflickr.com/320/240/paris,girl/all'],
       },
     },
+    data: function () {
+      return {
+        slideNum: 1,
+      };
+    },
     methods: {
-
+      showSlides(slideNum, slides) {
+        slides.forEach((item) => {
+          return {
+           'noDisplay': item
+			    };
+        });
+        return {
+         'display': slides[slideNum - 1]
+        };
+      },
     },
   });
 </script>
