@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <MyButton v-for="i in todos"
-        :key="i.id"
-        :type="i.type"
-        :title="i.title"
-        :color="i.color"
-        :size="i.size"
-      >
-    </MyButton>
+    <MyButton> Default </MyButton>
+    <MyButton color="success"> Success </MyButton>
+    <MyButton color="danger"> Danger </MyButton>
+    <MyButton color="warning"> Warning </MyButton>
+    <MyButton color="info"> Info </MyButton>
+    <MyButton color="light"> Light </MyButton>
+    <MyButton color="dark"> Dark </MyButton>
+    <MyButton color="primary"> Primary </MyButton>
+    <MyButton color="secondary"> Secondary </MyButton></br>
+    <MyButton size="lg"> Default </MyButton>
+    <MyButton color="success" size="lg"> Success </MyButton>
+    <MyButton color="danger" size="lg"> Danger </MyButton>
+    <MyButton color="warning" size="lg"> Warning </MyButton>
+    <MyButton color="info" size="lg"> Info </MyButton>
+    <MyButton color="light" size="lg"> Light </MyButton>
+    <MyButton color="dark" size="lg"> Dark </MyButton>
+    <MyButton color="primary" size="lg"> Primary </MyButton>
+    <MyButton color="secondary" size="lg"> Secondary </MyButton></br>
+    <MyButton size="sm"> Default </MyButton>
+    <MyButton color="success" size="sm"> Success </MyButton>
+    <MyButton color="danger" size="sm"> Danger </MyButton>
+    <MyButton color="warning" size="sm"> Warning </MyButton>
+    <MyButton color="info" size="sm"> Info </MyButton>
+    <MyButton color="light" size="sm"> Light </MyButton>
+    <MyButton color="dark" size="sm"> Dark </MyButton>
+    <MyButton color="primary" size="sm"> Primary </MyButton>
+    <MyButton color="secondary" size="sm"> Secondary </MyButton>
   </div>
 </template>
 
@@ -17,21 +36,6 @@ export default({
   name: 'Home',
   components: {
     MyButton,
-  },
-  data() {
-    return {
-      todos: [
-        { id: 1, title: "Large", color: "success", size: "lg"},
-        { id: 2, title: "Large", color: "primary", size: "lg"},
-        { id: 3, title: "Large", color: "secondary", size: "lg"},
-        { id: 4, title: "Middle", color: "warning"},
-        { id: 5, title: "Middle", color: "danger"},
-        { id: 6, title: "Default"},
-        { id: 7, title: "Small", color: "info", size: "sm"},
-        { id: 8, title: "Small", color: "light", size: "sm"},
-        { id: 9, title: "Small", color: "dark", size: "sm"},
-      ],
-    };
   },
 });
 </script>

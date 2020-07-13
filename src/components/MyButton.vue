@@ -1,29 +1,19 @@
 <template>
-	<div class="button" :class="'button-' + color + ' button-' + size"
-	    @click="sendClick()"
-	    >
-			<slot>{{title}}</slot>
+	<div class='button' :class="'button-' + color + ' button-' + size"
+	    @click='sendClick()'>
+			<slot></slot>
 	</div>
 </template>
 
 <script lang="ts">
-
 import Vue from 'vue';
-
 export default Vue.extend({
-  name: 'MyButton',
+	name: 'MyButton',
   props: {
-		id: {
-			type: Number,
-		},
-		title: {
-			type: String,
-			default: 'Text',
-		},
-    size: {
+		size: {
 			type: String,
 		},
-    color: {
+		color: {
 			type: String,
 			default: 'primary',
 		},
