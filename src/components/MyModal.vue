@@ -19,7 +19,7 @@
 <script lang="ts">
   import Vue from 'vue';
   export default Vue.extend({
-    name: 'Modal',
+    name: 'MyModal',
     props: {
       head: {
         type: String,
@@ -42,11 +42,11 @@
     methods: {
       openModal(): void {
         this.visible = true;
-        this.$emit('open');
+        this.$emit('openModal');
       },
       closeModal(): void {
         this.visible = false;
-        this.$emit('close');
+        this.$emit('closeModal');
       },
     },
   });

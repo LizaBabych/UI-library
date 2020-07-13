@@ -9,7 +9,7 @@
 <script lang="ts">
   import MyModal from '@/components/MyModal.vue';
   export default {
-    name: 'ModalView',
+    name: 'Home',
     components: {
       MyModal,
     },
