@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <Modal>Open modal</Modal>
+  <div>
+    <MyModal v-slot:trigger>
+      <button>Open modal</button>
+    </MyModal>
   </div>
 </template>
 
 <script lang="ts">
-import MyButton from '@/components/MyModal.vue';
-
-export default({
-  name: 'Home',
-  components: {
-    MyModal,
-  },
-});
-
+  import MyModal from '@/components/MyModal.vue';
+  export default {
+    name: 'ModalView',
+    components: {
+      MyModal,
+    },
+  };
 </script>
