@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div @click="openModal">
-      <slot name="trigger">
+    <div @click='openModal'>
+      <slot name='trigger'>
         <button></button>
       </slot>
     </div>
-    <div class="modal-content" v-if="visible">
-      <div class="modal-head">{{head}}</div>
-      <div class="modal-body">{{body}}</div>
-      <div class="modal-footer" @click="closeModal">
-          <button class="close-button">{{footer}}</button>
+    <div class='modal-content' v-if="visible">
+      <div class='modal-head'>{{head}}</div>
+      <div class='modal-body'>{{body}}</div>
+      <div class='modal-footer' @click="closeModal">
+          <button class='close-button'>{{footer}}</button>
       </div>
     </div>
-    <div class="modal" v-if="visible" @click="closeModal"></div>
+    <div class='modal' v-if='visible' @click='closeModal'></div>
   </div>
 </template>
 
@@ -23,16 +23,16 @@
     props: {
       head: {
         type: String,
-        default: "HEAD"
+        default: 'HEAD',
       },
       body: {
         type: String,
-        default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       },
       footer: {
         type: String,
-        default: "Close"
-      }
+        default: 'Close',
+      },
     },
     data() {
       return {
