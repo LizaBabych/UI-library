@@ -25,7 +25,7 @@
   });
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
 
 #slider {
