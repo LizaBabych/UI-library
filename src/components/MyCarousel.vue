@@ -1,14 +1,14 @@
 <template>
   <div>
-    <button class='prevButton' @click="showSlides(slideNum -= 1, pictures)"> prev </button>
-    <div class='slides'>
+    <div class='slider'>
       <img
         v-for='(img, index) in pictures'
         :key='index'
         :src='img' alt='Picture not found'
       >
-    </div>
-    <button class='nextButton' @click="showSlides(slideNum += 1, pictures)"> next </button>
+    <button class='prev' @click="showSlides(slideNum -= 1, pictures)"> < </button>
+    <button class='next' @click="showSlides(slideNum += 1, pictures)"> > </button>
+  </div>
   </div>
 </template>
 
@@ -19,6 +19,10 @@
     props: {
       pictures: {
         type: Array,
+      },
+      imageWidth: {
+        type: Number,
+        default: 320,
       },
     },
     data: function () {
@@ -38,13 +42,18 @@
         };
       },
     },
+    computed: {
+      changeImage(): object {
+        return { transform: 'translateX(' + (-this.imageWidth * this.counter) + 'px)' };
+      },
+    },
   });
 </script>
 
 <style scoped lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
 
-#slider {
+.slider {
   margin-left: 38%;
   position: relative;
   & button {
