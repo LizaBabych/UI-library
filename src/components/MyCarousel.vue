@@ -5,6 +5,7 @@
         v-for='(img, index) in pictures'
         :key='index'
         :src='img' alt='Picture not found'
+        :class="[!display ? 'display' : 'display']"
       >
     <button class='prev' @click="showSlides(slideNum -= 1, pictures)"> < </button>
     <button class='next' @click="showSlides(slideNum += 1, pictures)"> > </button>
@@ -13,6 +14,9 @@
 </template>
 
 <script lang="ts">
+//v-if="display" :class="{'display': display }"
+//v-else="display"
+//:class="{'display': display }"
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyCarousel',
@@ -20,14 +24,11 @@
       pictures: {
         type: Array,
       },
-      imageWidth: {
-        type: Number,
-        default: 320,
-      },
     },
     data: function () {
       return {
         slideNum: 1,
+        display: true,
       };
     },
     methods: {
@@ -40,11 +41,6 @@
         return {
          'display': slides[slideNum - 1]
         };
-      },
-    },
-    computed: {
-      changeImage(): object {
-        return { transform: 'translateX(' + (-this.imageWidth * this.counter) + 'px)' };
       },
     },
   });
