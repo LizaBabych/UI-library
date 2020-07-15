@@ -57,15 +57,12 @@
         value: '',
       };
     },
-    methods: {
-
-    },
     computed: {
       searchItem() {
         const searchUser = [];
         if (this.value !== '') {
           this.users.forEach((item) => {
-            for (const index of item) {
+            for (const index in item) {
               this.search.fields.forEach((field) => {
                 if (index === field) {
                   this.search.filters.forEach((filter) => {
