@@ -1,46 +1,48 @@
 <template>
   <div>
-    <div class='slider'>
-      <img
-        v-for='(img, index) in pictures'
-        :key='index'
-        :src='img' alt='Picture not found'
-        :class="[!display ? 'display' : 'display']"
-      >
-    <button class='prev' @click="showSlides(slideNum -= 1, pictures)"> < </button>
-    <button class='next' @click="showSlides(slideNum += 1, pictures)"> > </button>
+    <div class='slider' :style="{ width: this.imageWidth + 'px' }">
+      <div class='slide' :style="sliding">
+        <img
+          v-for='(img, index) of pictures'
+          :key='index'
+          :src='img' alt='Picture not found'
+          :width="imageWidth"
+        >
+      </div>
+      <button class="prev"
+        v-if="slideNum != 0"
+        @click="slideNum--"
+      ><</button>
+      <button class="next"
+        v-if="slideNum != pictures.length-1"
+        @click="slideNum++;"
+      >></button>
   </div>
   </div>
 </template>
 
 <script lang="ts">
-//v-if="display" :class="{'display': display }"
-//v-else="display"
-//:class="{'display': display }"
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyCarousel',
     props: {
       pictures: {
         type: Array,
+        required: true,
+      },
+      imageWidth: {
+        type: Number,
+        default: 320,
       },
     },
-    data: function () {
+    data() {
       return {
-        slideNum: 1,
-        display: true,
+        slideNum: 0,
       };
     },
-    methods: {
-      showSlides(slideNum, slides) {
-        slides.forEach((item) => {
-          return {
-           'noDisplay': item
-			    };
-        });
-        return {
-         'display': slides[slideNum - 1]
-        };
+    computed: {
+      sliding() {
+        return { 'margin-left': -this.slideNum * this.imageWidth + 'px'};
       },
     },
   });
@@ -49,19 +51,26 @@
 <style scoped lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
 
+.slide {
+  transition: 1s;
+  display: flex;
+}
 .slider {
   margin-left: 38%;
   position: relative;
-  & button {
-    background-color: @button-color;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-left: 35%;
 }
 
 .prev, .next  {
+  background-color: @button-color;
+  transition: 1s;
   position: absolute;
   cursor: pointer;
   font-size: 18px;
-  margin-top: 12.5%;
+  margin-top: 30%;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
@@ -69,10 +78,6 @@
 .prev { left: 0; }
 
 .next { left: 294px; }
-
-.noDisplay {display: none; }
-
-.display {display: block; }
 
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
