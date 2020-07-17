@@ -110,7 +110,6 @@
 @border-color: rgb(120, 120, 120);
 @tcell-color: rgba(255, 99, 71, 0.2);
 @tcell-hover-color: rgba(255, 99, 71, 0.4);
-
 .usersTable {
   @table-width: 300px;
   margin-left: 35%;
