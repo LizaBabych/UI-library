@@ -15,8 +15,8 @@
         {{ col.title }}
           <button
             v-if="col.sortable"
-            @click="sorting(col, 1)"
-          > 1
+            @click="sorting(col)"
+          > +
           </button>
         </th>
       </tr>
@@ -61,15 +61,22 @@
       return {
         value: '',
         sortData: Array.from(this.users),
+        koef: 1,
       };
     },
     methods: {
-      sorting(column, koef) {
-        if (column.type === 'number') {
-          this.sortData.sort((u1, u2) => (u1.age - u2.age) * koef);
-        } else {
-          this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * koef);
+      sorting(column) {
+        if (this.koef == 0) {
+          this.sortData = this.users;
+          return this.koef = 1;
         }
+        if (column.type === 'number') {
+          this.sortData.sort((u1, u2) => (u1.age - u2.age) * this.koef);
+        } else {
+          this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * this.koef);
+        }
+        if (this.koef == 1) return this.koef = -1;
+        if (this.koef == -1) return this.koef = 0;
       },
     },
     computed: {
