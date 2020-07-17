@@ -13,6 +13,11 @@
           :key="index"
         >
         {{ col.title }}
+          <button
+            v-if="col.sortable"
+            @click="sorting(col, 1)"
+          > 1
+          </button>
         </th>
       </tr>
       </thead>
@@ -55,13 +60,23 @@
     data() {
       return {
         value: '',
+        sortData: Array.from(this.users),
       };
+    },
+    methods: {
+      sorting(column, koef) {
+        if (column.type === 'number') {
+          this.sortData.sort((u1, u2) => (u1.age - u2.age) * koef);
+        } else {
+          this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * koef);
+        }
+      },
     },
     computed: {
       searchItem() {
         const searchUser = [];
         if (this.value !== '') {
-          this.users.forEach((item) => {
+          this.sortData.forEach((item) => {
             for (const index in item) {
               this.search.fields.forEach((field) => {
                 if (index === field) {
@@ -75,7 +90,7 @@
             }
           });
         } else {
-            return this.users;
+           return this.sortData;
         }
         return searchUser;
       },
