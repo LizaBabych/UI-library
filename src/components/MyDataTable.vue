@@ -16,7 +16,16 @@
           <button
             v-if="col.sortable"
             @click="sorting(col)"
-          > +
+          >
+          <i v-if="koef === 1"
+            class="fas fa-sort">
+          </i>
+          <i v-else-if="koef === -1"
+            class="fas fa-sort-up">
+          </i>
+          <i v-if="koef === 0"
+            class="fas fa-sort-down">
+          </i>
           </button>
         </th>
       </tr>
@@ -40,6 +49,7 @@
 </template>
 
 <script>
+  import '@fortawesome/fontawesome-free/css/all.css';
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyDataTable',
@@ -66,8 +76,8 @@
     },
     methods: {
       sorting(column) {
-        if (this.koef == 0) {
-          this.sortData = this.users;
+        if (this.koef === 0) {
+          this.sortData = Array.from(this.users);
           return this.koef = 1;
         }
         if (column.type === 'number') {
@@ -75,8 +85,12 @@
         } else {
           this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * this.koef);
         }
-        if (this.koef == 1) return this.koef = -1;
-        if (this.koef == -1) return this.koef = 0;
+        if (this.koef === 1) {
+          return this.koef = -1;
+        }
+        if (this.koef === -1) {
+          return this.koef = 0;
+        }
       },
     },
     computed: {
