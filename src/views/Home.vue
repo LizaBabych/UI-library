@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="button">
+      <h1>Button</h1>
       <MyButton> Default </MyButton>
       <MyButton color="success"> Success </MyButton>
       <MyButton color="danger"> Danger </MyButton>
@@ -29,7 +30,9 @@
       <MyButton color="primary" size="sm"> Primary </MyButton>
       <MyButton color="secondary" size="sm"> Secondary </MyButton>
     </div>
+
     <div id="grid">
+      <h1>Grid</h1>
       <Row>
         <Column>1</Column>
       </Row>
@@ -71,7 +74,9 @@
         <Column>12</Column>
       </Row>
     </div>
+
     <div id="modal">
+      <h1>Modal</h1>
       <MyModal>
         <template #trigger>
           <button>Open modal</button>
@@ -88,7 +93,15 @@
         </template>
       </MyModal>
     </div>
+
+    <div id="carousel">
+      <h1>Carousel</h1>
+      <MyCarousel :pictures="pictures">
+      </MyCarousel>
+    </div>
+
     <div id="datatable">
+      <h1>Data-table</h1>
       <MyDataTable
         :config="config"
         :users="users"
@@ -98,7 +111,7 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 
 import MyButton from '@/components/MyButton.vue';
 import Row from '@/components/grid/Row.vue';
@@ -120,6 +133,12 @@ export default({
   data () {
     return {
       cols: '12',
+      pictures: [
+      'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
+       'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
+       'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
+       'https://loremflickr.com/320/240/paris,girl/all'
+     ],
       config: [
         {title: '№', value: '_index'},
         {title: 'Имя', value: 'name'},
@@ -145,3 +164,12 @@ export default({
     };
   },
 });
+</script>
+
+<style scoped>
+  h1 {
+    padding: 30px 0 30px 30px;
+    background-color: LightBlue;
+    margin: 20px 0;
+  }
+</style>
