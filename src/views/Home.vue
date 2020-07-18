@@ -1,7 +1,19 @@
 <template>
   <div>
-    <MyModal v-slot:trigger>
-      <button>Open modal</button>
+    <MyModal>
+      <template #trigger>
+        <button>Open modal</button>
+      </template>
+      <template #head>
+        HEADER
+      </template>
+      <template #body>
+        Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </template>
+      <template #footer>
+        <button>Okey</button>
+      </template>
     </MyModal>
   </div>
 </template>

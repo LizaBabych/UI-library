@@ -6,10 +6,14 @@
       </slot>
     </div>
     <div class='modal-content' v-if="visible">
-      <div class='modal-head'>{{head}}</div>
-      <div class='modal-body'>{{body}}</div>
+      <div class='modal-head'>
+        <slot name="head">Head</slot>
+      </div>
+      <div class='modal-body'>
+        <slot name="body">Body</slot>
+      </div>
       <div class='modal-footer' @click="closeModal">
-          <button class='close-button'>{{footer}}</button>
+        <slot name="footer">Footer</slot>
       </div>
     </div>
     <div class='modal' v-if='visible' @click='closeModal'></div>
@@ -20,20 +24,6 @@
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyModal',
-    props: {
-      head: {
-        type: String,
-        default: 'HEAD',
-      },
-      body: {
-        type: String,
-        default: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      footer: {
-        type: String,
-        default: 'Close',
-      },
-    },
     data() {
       return {
         visible: false,
