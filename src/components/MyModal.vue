@@ -42,7 +42,7 @@
   });
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 @modal-width: 500px;
 
 .modal-content {
@@ -51,7 +51,7 @@
   border: 1px solid gray;
   border-radius: 5px;
   width: @modal-width;
-  margin: 15% 30%;
+  margin-left: 30%;
   z-index: 10;
 
   & h2 {

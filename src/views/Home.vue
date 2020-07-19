@@ -1,5 +1,25 @@
 <template>
   <div id="app">
+
+    <div id="modal">
+      <h1>Modal</h1>
+      <MyModal>
+        <template #trigger>
+          <button>Open modal</button>
+        </template>
+        <template #head>
+          HEADER
+        </template>
+        <template #body>
+          Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </template>
+        <template #footer>
+          <button>Okey</button>
+        </template>
+      </MyModal>
+    </div>
+    
     <div id="button">
       <h1>Button</h1>
       <MyButton> Default </MyButton>
@@ -75,25 +95,6 @@
       </Row>
     </div>
 
-    <div id="modal">
-      <h1>Modal</h1>
-      <MyModal>
-        <template #trigger>
-          <button>Open modal</button>
-        </template>
-        <template #head>
-          HEADER
-        </template>
-        <template #body>
-          Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </template>
-        <template #footer>
-          <button>Okey</button>
-        </template>
-      </MyModal>
-    </div>
-
     <div id="carousel">
       <h1>Carousel</h1>
       <MyCarousel :pictures="pictures">
@@ -166,7 +167,7 @@ export default({
 });
 </script>
 
-<style scoped>
+<style scoped lang="less">
   h1 {
     padding: 30px 0 30px 30px;
     background-color: LightBlue;
