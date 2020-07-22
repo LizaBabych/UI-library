@@ -42,7 +42,7 @@
   });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @modal-width: 500px;
 
 .modal-content {

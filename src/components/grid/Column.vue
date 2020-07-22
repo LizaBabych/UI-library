@@ -16,7 +16,7 @@
 	});
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @columns: 12;
 .col {
 	background-color: gray;

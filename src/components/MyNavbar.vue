@@ -35,7 +35,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @menu-color: rgb(106, 90, 205);
 @header-color: rgba(92, 200, 255, 0.6);
 @secondary-header-color: rgba(0, 135, 255, 1);

@@ -26,7 +26,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @primary: DodgerBlue;
 @secondary: Gray;
 @success: MediumSeaGreen;

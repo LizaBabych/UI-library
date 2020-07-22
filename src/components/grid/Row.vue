@@ -11,7 +11,7 @@
 	});
 </script>
 
-<style scoped>
+<style>
   .row {
     padding: 15px 0;
     text-align: center;

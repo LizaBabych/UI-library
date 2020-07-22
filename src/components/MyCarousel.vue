@@ -48,7 +48,7 @@
   });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
 
 .slide {
@@ -77,7 +77,7 @@
 
 .prev { left: 0; }
 
-.next { left: 294px; }
+.next { right: 0; }
 
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
