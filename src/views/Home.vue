@@ -5,7 +5,7 @@
       <h1>Modal</h1>
       <MyModal>
         <template #trigger>
-          <button>Open modal</button>
+          <MyButton> Open modal </MyButton>
         </template>
         <template #head>
           HEADER
@@ -19,7 +19,7 @@
         </template>
       </MyModal>
     </div>
-    
+
     <div id="button">
       <h1>Button</h1>
       <MyButton> Default </MyButton>
@@ -167,7 +167,9 @@ export default({
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
+body {
+}
   h1 {
     padding: 30px 0 30px 30px;
     background-color: LightBlue;

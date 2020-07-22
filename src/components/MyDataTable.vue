@@ -119,7 +119,7 @@
   });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @thead-color: rgba(255, 99, 71, 0.6);
 @border-color: rgb(120, 120, 120);
 @tcell-color: rgba(255, 99, 71, 0.2);

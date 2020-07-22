@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class='modal' v-if='visible'></div>
     <div @click='openModal'>
       <slot name='trigger'>
         <button></button>
@@ -8,6 +9,7 @@
     <div class='modal-content' v-if="visible">
       <div class='modal-head'>
         <slot name="head">Head</slot>
+        <button @click="closeModal">X</button>
       </div>
       <div class='modal-body'>
         <slot name="body">Body</slot>
@@ -16,7 +18,6 @@
         <slot name="footer">Footer</slot>
       </div>
     </div>
-    <div class='modal' v-if='visible' @click='closeModal'></div>
   </div>
 </template>
 
@@ -42,7 +43,7 @@
   });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @modal-width: 500px;
 
 .modal-content {

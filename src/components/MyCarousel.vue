@@ -56,7 +56,6 @@
   display: flex;
 }
 .slider {
-  margin-left: 38%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -66,7 +65,6 @@
 
 .prev, .next  {
   background-color: @button-color;
-  transition: 1s;
   position: absolute;
   cursor: pointer;
   font-size: 18px;
@@ -77,7 +75,7 @@
 
 .prev { left: 0; }
 
-.next { left: 294px; }
+.next { right: 0; }
 
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
