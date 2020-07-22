@@ -1,6 +1,15 @@
 <template>
   <div id="app">
-
+    <MyNavbar>
+      <template #logo>
+        <img class="header-logo" src="@/favicon.png" alt="Error">
+      </template>
+      <template #menu>
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+      </template>
+    </MyNavbar>
     <div id="modal">
       <h1>Modal</h1>
       <MyModal>
@@ -19,7 +28,7 @@
         </template>
       </MyModal>
     </div>
-    
+
     <div id="button">
       <h1>Button</h1>
       <MyButton> Default </MyButton>
@@ -113,17 +122,17 @@
 </template>
 
 <script lang="ts">
-
+import MyNavbar from '@/components/MyNavbar.vue';
 import MyButton from '@/components/MyButton.vue';
 import Row from '@/components/grid/Row.vue';
 import Column from '@/components/grid/Column.vue';
 import MyModal from '@/components/MyModal.vue';
 import MyCarousel from '@/components/MyCarousel.vue';
 import MyDataTable from '@/components/MyDataTable.vue';
-
 export default({
   name: 'Home',
   components: {
+    MyNavbar,
     MyButton,
     Row,
     Column,
@@ -167,7 +176,11 @@ export default({
 });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
+  body {
+    margin-top: 100px;
+    margin-left: 0;
+  }
   h1 {
     padding: 30px 0 30px 30px;
     background-color: LightBlue;
