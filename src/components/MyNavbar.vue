@@ -63,9 +63,6 @@ export default Vue.extend({
   justify-content: space-between;
   height: @header-width;
   align-items: center;
-  & img {
-    border-radius: 50%;
-  }
 }
 
 .header-list {

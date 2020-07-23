@@ -5,9 +5,11 @@
         <button></button>
       </slot>
     </div>
+    <div class='modal' v-if='visible'></div>
     <div class='modal-content' v-if="visible">
       <div class='modal-head'>
         <slot name="head">Head</slot>
+        <button @click='closeModal'>X</button>
       </div>
       <div class='modal-body'>
         <slot name="body">Body</slot>
@@ -16,7 +18,6 @@
         <slot name="footer">Footer</slot>
       </div>
     </div>
-    <div class='modal' v-if='visible' @click='closeModal'></div>
   </div>
 </template>
 

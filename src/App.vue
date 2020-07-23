@@ -6,9 +6,6 @@
 
 <script lang="ts">
 </script>
-<<<<<<< HEAD
-=======
 
 <style lang="less">
 </style>
->>>>>>> mymodal
