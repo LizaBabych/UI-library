@@ -1,5 +1,5 @@
 <template>
-	<div class='button' :class="'button-' + color + ' button-' + size"
+	<div class='button' :class="'button-' + color + ' button-' + size, disabled"
 	    @click='sendClick()'>
 			<slot></slot>
 	</div>
