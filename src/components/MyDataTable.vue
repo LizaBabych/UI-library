@@ -1,50 +1,52 @@
 <template>
-  <div class="usersTable">
-    <input id="table-search-input" placeholder="Search"
-      v-if="search"
-      type="text"
-      v-model="value"
-    >
-    <table>
-      <thead>
-      <tr>
-        <th
-          v-for="(col, index) in config"
-          :key="index"
-        >
-        {{ col.title }}
-          <button
-            v-if="col.sortable"
-            @click="sorting(col)"
-          >
-          <i v-if="koef === 1"
-            class="fas fa-sort">
-          </i>
-          <i v-else-if="koef === -1"
-            class="fas fa-sort-up">
-          </i>
-          <i v-if="koef === 0"
-            class="fas fa-sort-down">
-          </i>
-          </button>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr
-        v-for="(item, searchInd) in searchItem"
-        :key="searchInd"
+  <div id="table">
+    <div class="usersTable">
+      <input id="table-search-input" placeholder="Search"
+        v-if="search"
+        type="text"
+        v-model="value"
       >
-        <td
-          v-for="(col, configInd) in config"
-          :key="configInd"
-          :class="{'align-right': col.type === 'number'}"
+      <table>
+        <thead>
+        <tr>
+          <th
+            v-for="(col, index) in config"
+            :key="index"
+          >
+          {{ col.title }}
+            <button
+              v-if="col.sortable"
+              @click="sorting(col)"
+            >
+            <i v-if="koef === 1"
+              class="fas fa-sort">
+            </i>
+            <i v-else-if="koef === -1"
+              class="fas fa-sort-up">
+            </i>
+            <i v-if="koef === 0"
+              class="fas fa-sort-down">
+            </i>
+            </button>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+          v-for="(item, searchInd) in searchItem"
+          :key="searchInd"
         >
-        {{ col.value === '_index' ? searchInd + 1 : item[col.value] }}
-        </td>
-      </tr>
-      </tbody>
-    </table>
+          <td
+            v-for="(col, configInd) in config"
+            :key="configInd"
+            :class="{'align-right': col.type === 'number'}"
+          >
+          {{ col.value === '_index' ? searchInd + 1 : item[col.value] }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -124,9 +126,12 @@
 @border-color: rgb(120, 120, 120);
 @tcell-color: rgba(255, 99, 71, 0.2);
 @tcell-hover-color: rgba(255, 99, 71, 0.4);
+#table {
+  display: flex;
+  justify-content: center;
+}
 .usersTable {
   @table-width: 300px;
-  margin-left: 35%;
   font-family: 'Balsamiq Sans', cursive;
   #table-search-input {
     height: 30px;
@@ -163,9 +168,6 @@
       cursor: pointer;
     }
     & .align-right { text-align: right; }
-  }
-  @media (max-width: 767px) {
-    margin-left: 0;
   }
 }
 </style>

@@ -14,114 +14,105 @@
         <li><router-link to="/mydatatable">MyDataTable</router-link></li>
       </template>
     </MyNavbar>
-    <div id="modal">
-      <h1>Modal</h1>
-      <MyModal>
-        <template #trigger>
-          <button>Open modal</button>
-        </template>
-        <template #head>
-          HEADER
-        </template>
-        <template #body>
-          Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </template>
-        <template #footer>
-          <button>Okey</button>
-        </template>
-      </MyModal>
-    </div>
+    <h1>Modal</h1>
+    <MyModal>
+      <template #trigger>
+        <button>Open modal</button>
+      </template>
+      <template #head>
+        HEADER
+      </template>
+      <template #body>
+        Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </template>
+      <template #footer>
+        <button>Okey</button>
+      </template>
+    </MyModal>
 
-    <div id="button">
-      <h1>Button</h1>
-      <MyButton> Default </MyButton>
-      <MyButton color="success"> Success </MyButton>
-      <MyButton color="danger"> Danger </MyButton>
-      <MyButton color="warning"> Warning </MyButton>
-      <MyButton color="info"> Info </MyButton>
-      <MyButton color="light"> Light </MyButton>
-      <MyButton color="dark"> Dark </MyButton>
-      <MyButton color="primary"> Primary </MyButton>
-      <MyButton color="secondary"> Secondary </MyButton></br>
-      <MyButton size="lg"> Default </MyButton>
-      <MyButton color="success" size="lg"> Success </MyButton>
-      <MyButton color="danger" size="lg"> Danger </MyButton>
-      <MyButton color="warning" size="lg"> Warning </MyButton>
-      <MyButton color="info" size="lg"> Info </MyButton>
-      <MyButton color="light" size="lg"> Light </MyButton>
-      <MyButton color="dark" size="lg"> Dark </MyButton>
-      <MyButton color="primary" size="lg"> Primary </MyButton>
-      <MyButton color="secondary" size="lg"> Secondary </MyButton></br>
-      <MyButton size="sm"> Default </MyButton>
-      <MyButton color="success" size="sm"> Success </MyButton>
-      <MyButton color="danger" size="sm"> Danger </MyButton>
-      <MyButton color="warning" size="sm"> Warning </MyButton>
-      <MyButton color="info" size="sm"> Info </MyButton>
-      <MyButton color="light" size="sm"> Light </MyButton>
-      <MyButton color="dark" size="sm"> Dark </MyButton>
-      <MyButton color="primary" size="sm"> Primary </MyButton>
-      <MyButton color="secondary" size="sm"> Secondary </MyButton>
-    </div>
+    <h1>Button</h1>
+    <MyButton> Default </MyButton>
+    <MyButton color="success"> Success </MyButton>
+    <MyButton color="danger"> Danger </MyButton>
+    <MyButton color="warning"> Warning </MyButton>
+    <MyButton color="info"> Info </MyButton>
+    <MyButton color="light"> Light </MyButton>
+    <MyButton color="dark"> Dark </MyButton>
+    <MyButton color="primary"> Primary </MyButton>
+    <MyButton color="secondary"> Secondary </MyButton></br>
+    <MyButton size="lg"> Default </MyButton>
+    <MyButton color="success" size="lg"> Success </MyButton>
+    <MyButton color="danger" size="lg"> Danger </MyButton>
+    <MyButton color="warning" size="lg"> Warning </MyButton>
+    <MyButton color="info" size="lg"> Info </MyButton>
+    <MyButton color="light" size="lg"> Light </MyButton>
+    <MyButton color="dark" size="lg"> Dark </MyButton>
+    <MyButton color="primary" size="lg"> Primary </MyButton>
+    <MyButton color="secondary" size="lg"> Secondary </MyButton></br>
+    <MyButton size="sm"> Default </MyButton>
+    <MyButton color="success" size="sm"> Success </MyButton>
+    <MyButton color="danger" size="sm"> Danger </MyButton>
+    <MyButton color="warning" size="sm"> Warning </MyButton>
+    <MyButton color="info" size="sm"> Info </MyButton>
+    <MyButton color="light" size="sm"> Light </MyButton>
+    <MyButton color="dark" size="sm"> Dark </MyButton>
+    <MyButton color="primary" size="sm"> Primary </MyButton>
+    <MyButton color="secondary" size="sm"> Secondary </MyButton>
 
-    <div id="grid">
-      <h1>Grid</h1>
-      <Row>
-        <Column>1</Column>
-      </Row>
-      <Row>
-        <Column>2</Column>
-        <Column>2</Column>
-      </Row>
-      <Row>
-        <Column>3</Column>
-        <Column>3</Column>
-        <Column>3</Column>
-      </Row>
-      <Row>
-        <Column>4</Column>
-        <Column>4</Column>
-        <Column>4</Column>
-        <Column>4</Column>
-      </Row>
-      <Row>
-        <Column>6</Column>
-        <Column>6</Column>
-        <Column>6</Column>
-        <Column>6</Column>
-        <Column>6</Column>
-        <Column>6</Column>
-      </Row>
-      <Row>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-        <Column>12</Column>
-      </Row>
-    </div>
+    <h1>Grid</h1>
+    <Row>
+      <Column>1</Column>
+    </Row>
+    <Row>
+      <Column>2</Column>
+      <Column>2</Column>
+    </Row>
+    <Row>
+      <Column>3</Column>
+      <Column>3</Column>
+      <Column>3</Column>
+    </Row>
+    <Row>
+      <Column>4</Column>
+      <Column>4</Column>
+      <Column>4</Column>
+      <Column>4</Column>
+    </Row>
+    <Row>
+      <Column>6</Column>
+      <Column>6</Column>
+      <Column>6</Column>
+      <Column>6</Column>
+      <Column>6</Column>
+      <Column>6</Column>
+    </Row>
+    <Row>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+    </Row>
 
-    <div id="carousel">
-      <h1>Carousel</h1>
-      <MyCarousel :pictures="pictures">
-      </MyCarousel>
-    </div>
+    <h1>Carousel</h1>
+    <MyCarousel :pictures="pictures">
+    </MyCarousel>
 
-    <div id="datatable">
-      <h1>Data-table</h1>
-      <MyDataTable
-        :config="config"
-        :users="users"
-        :search="search"
-      />
-    </div>
+    <h1>Data-table</h1>
+    <MyDataTable
+      :config="config"
+      :users="users"
+      :search="search"
+    >
+    </MyDataTable>
   </div>
 </template>
 
@@ -184,6 +175,7 @@ export default({
   body {
     margin-top: 100px;
     margin-left: 0;
+    margin-right: 0;
   }
   h1 {
     padding: 30px 0 30px 30px;

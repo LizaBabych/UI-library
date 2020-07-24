@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="carousel">
     <div class='slider' :style="{ width: this.imageWidth + 'px' }">
       <div class='slide' :style="sliding">
         <img
@@ -51,17 +51,21 @@
 <style lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
 
+#carousel {
+  display: flex;
+  justify-content: center;
+}
+
 .slide {
   transition: 1s;
   display: flex;
 }
+
 .slider {
-  margin-left: 38%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-left: 35%;
 }
 
 .prev, .next  {

@@ -5,17 +5,19 @@
         <button></button>
       </slot>
     </div>
-    <div class='modal' v-if='visible'></div>
-    <div class='modal-content' v-if="visible">
-      <div class='modal-head'>
-        <slot name="head">Head</slot>
-        <button @click='closeModal'>X</button>
-      </div>
-      <div class='modal-body'>
-        <slot name="body">Body</slot>
-      </div>
-      <div class='modal-footer' @click="closeModal">
-        <slot name="footer">Footer</slot>
+    <div id="modal">
+      <div class='modal' v-if='visible'></div>
+      <div class='modal-content' v-if="visible">
+        <div class='modal-head'>
+          <slot name="head">Head</slot>
+          <button @click='closeModal'>X</button>
+        </div>
+        <div class='modal-body'>
+          <slot name="body">Body</slot>
+        </div>
+        <div class='modal-footer' @click="closeModal">
+          <slot name="footer">Footer</slot>
+        </div>
       </div>
     </div>
   </div>
@@ -46,13 +48,17 @@
 <style lang="less">
 @modal-width: 500px;
 
+#modal {
+  display: flex;
+  justify-content: center;
+}
+
 .modal-content {
   background-color: rgb(240, 240, 240);
   position: fixed;
   border: 1px solid gray;
   border-radius: 5px;
   width: @modal-width;
-  margin-left: 30%;
   z-index: 10;
 
   & h2 {
