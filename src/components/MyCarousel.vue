@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="carousel">
     <div class='slider' :style="{ width: this.imageWidth + 'px' }">
       <div class='slide' :style="sliding">
         <img
@@ -17,7 +17,7 @@
         v-if="slideNum != pictures.length-1"
         @click="slideNum++;"
       >></button>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -48,9 +48,12 @@
   });
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @button-color: rgba(159, 99, 71, 0.5);
-
+#carousel {
+  display: flex;
+  justify-content: center;
+}
 .slide {
   transition: 1s;
   display: flex;
@@ -60,11 +63,10 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  margin-left: 35%;
 }
-
 .prev, .next  {
   background-color: @button-color;
+  transition: 1s;
   position: absolute;
   cursor: pointer;
   font-size: 18px;
@@ -72,11 +74,8 @@
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
-
 .prev { left: 0; }
-
 .next { right: 0; }
-
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
