@@ -67,6 +67,7 @@ button {
   background-color: rgb(180, 180, 180);
 }
 .modal {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
