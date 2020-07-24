@@ -14,7 +14,7 @@
         consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </template>
       <template #footer>
-        <button>Okey</button>
+        <MyButton color="success" size="sm"> Okey </MyButton>
       </template>
     </MyModal>
 
@@ -46,14 +46,6 @@
     <MyButton color="dark" size="sm"> Dark </MyButton>
     <MyButton color="primary" size="sm"> Primary </MyButton>
     <MyButton color="secondary" size="sm"> Secondary </MyButton></br>
-    <MyButton color="success" class="disabled"> Success </MyButton>
-    <MyButton color="danger" class="disabled"> Danger </MyButton>
-    <MyButton color="warning" class="disabled"> Warning </MyButton>
-    <MyButton color="info" class="disabled"> Info </MyButton>
-    <MyButton color="light" class="disabled"> Light </MyButton>
-    <MyButton color="dark" class="disabled"> Dark </MyButton>
-    <MyButton color="primary" class="disabled"> Primary </MyButton>
-    <MyButton color="secondary" class="disabled"> Secondary </MyButton></br>
 
     <h1>Grid</h1>
     <Row>

@@ -18,14 +18,11 @@
               v-if="col.sortable"
               @click="sorting(col)"
             >
-            <i v-if="koef === 1"
-              class="fas fa-sort">
-            </i>
-            <i v-else-if="koef === -1"
-              class="fas fa-sort-up">
-            </i>
-            <i v-if="koef === 0"
-              class="fas fa-sort-down">
+            <i :class="{
+              'fas fa-sort': koef === 1,
+              'fas fa-sort-up': koef === -1,
+              'fas fa-sort-down': koef === 0}"
+            >
             </i>
             </button>
           </th>

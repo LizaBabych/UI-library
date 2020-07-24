@@ -1,5 +1,6 @@
 <template>
-	<div class='button' :class="'button-' + color + ' button-' + size, disabled"
+	<div class='button'
+			:class="'button-' + color + ' button-' + size"
 	    @click='sendClick()'>
 			<slot></slot>
 	</div>
@@ -41,7 +42,7 @@ export default Vue.extend({
   padding: 10px;
 	border: 1px solid black;
   border-radius: 5px;
-  margin: 1em 0;
+  margin: 5px 5px 0 0;
   color: white;
 }
 .button.disabled {
