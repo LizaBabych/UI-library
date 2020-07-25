@@ -16,16 +16,13 @@
           {{ col.title }}
             <button
               v-if="col.sortable"
-              @click="sorting(col)"
+              @click="sorting(col, index)"
             >
-            <i v-if="koef === 1"
-              class="fas fa-sort">
-            </i>
-            <i v-else-if="koef === -1"
-              class="fas fa-sort-up">
-            </i>
-            <i v-if="koef === 0"
-              class="fas fa-sort-down">
+            <i :class="{
+              'fas fa-sort': koef[index] === 1 || koef[index] === undefined,
+              'fas fa-sort-up': koef[index] === -1,
+              'fas fa-sort-down': koef[index] === 0}"
+            >
             </i>
             </button>
           </th>
@@ -51,7 +48,7 @@
 </template>
 
 <script>
-  import '@fortawesome/fontawesome-free/css/all.css';
+  //import '@fortawesome/fontawesome-free/css/all.css';
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyDataTable',
@@ -73,32 +70,31 @@
       return {
         value: '',
         sortData: Array.from(this.users),
-        koef: 1,
+        koef: [],
       };
     },
     methods: {
-      sorting(column) {
-        if (this.koef === 0) {
+      sorting(column, index) {
+        if (this.koef[index] === 0 || this.koef[index] === undefined) {
           this.sortData = Array.from(this.users);
-          return this.koef = 1;
+          return this.koef[index] = 1;
         }
         if (column.type === 'number') {
-          this.sortData.sort((u1, u2) => (u1.age - u2.age) * this.koef);
+          this.sortData.sort((u1, u2) => (u1.age - u2.age) * this.koef[index]);
         } else {
-          this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * this.koef);
+          this.sortData.sort((u1, u2) => u1.surname.localeCompare(u2.surname) * this.koef[index]);
         }
-        if (this.koef === 1) {
-          return this.koef = -1;
+        if (this.koef[index] === 1) {
+          return this.koef[index] = -1;
         }
-        if (this.koef === -1) {
-          return this.koef = 0;
+        if (this.koef[index] === -1) {
+          return this.koef[index] = 0;
         }
       },
     },
     computed: {
       searchItem() {
         const searchUser = [];
-        if (this.value !== '') {
           this.sortData.forEach((item) => {
             for (const index in item) {
               this.search.fields.forEach((field) => {
@@ -112,9 +108,6 @@
               });
             }
           });
-        } else {
-           return this.sortData;
-        }
         return searchUser;
       },
     },
@@ -131,11 +124,10 @@
   justify-content: center;
 }
 .usersTable {
-  @table-width: 300px;
   font-family: 'Balsamiq Sans', cursive;
   #table-search-input {
     height: 30px;
-    width: @table-width - 7px;
+    width: 150px;
     border-radius: 5px;
     background-color: LightGray;
     &:focus {
@@ -143,7 +135,6 @@
     }
   }
   & table {
-    width: @table-width;
     margin-top: 30px;
     margin-bottom: 30px;
     border-collapse: collapse;

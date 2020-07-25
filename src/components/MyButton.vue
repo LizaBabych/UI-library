@@ -8,15 +8,15 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-	name: 'MyButton',
+  name: 'MyButton',
   props: {
-		size: {
-			type: String,
-		},
-		color: {
-			type: String,
-			default: 'primary',
-		},
+    size: {
+      type: String,
+    },
+    color: {
+      type: String,
+      default: 'primary',
+    },
   },
   methods: {
     sendClick() {
@@ -41,7 +41,7 @@ export default Vue.extend({
   padding: 10px;
 	border: 1px solid black;
   border-radius: 5px;
-  margin: 1em 0;
+  margin: 5px;
   color: white;
 }
 .button.disabled {

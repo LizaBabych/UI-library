@@ -2,63 +2,127 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <img class="header-logo" src="@/favicon.png" alt="Error">
+        <router-link to="/home" style="color: blue; font-size: 30px; text-shadow: 2px 2px black;">HOME</router-link></li>
       </template>
       <template #menu>
-        <li><router-link to="/home">Home</router-link></li>
         <li><router-link to="/mybutton">MyButton</router-link></li>
         <li><router-link to="/mygrid">MyGrid</router-link></li>
-        <li><router-link to="/mynavbar">MyNavbar</router-link></li>
         <li><router-link to="/mymodal">MyModal</router-link></li>
         <li><router-link to="/mycarousel">MyCarousel</router-link></li>
         <li><router-link to="/mydatatable">MyDataTable</router-link></li>
       </template>
     </MyNavbar>
-    <div id="button">
-      <h1>Button</h1>
-      <MyButton> Default </MyButton>
+    <h1>Button</h1>
+
+    <div class="container">
+        <p>Use the component button for actions in forms, dialogs, and more. </p>
+    </div>
+    <div class="example">
       <MyButton color="success"> Success </MyButton>
       <MyButton color="danger"> Danger </MyButton>
       <MyButton color="warning"> Warning </MyButton>
-      <MyButton color="info"> Info </MyButton>
+    </div>
+    <div class="container">
+      <p>Default button</p>
+    </div>
+    <div class="example">
+      <MyButton> Default </MyButton></br>
+    </div>
+    <div class="container">
+      <p>Colors</p>
+    </div>
+    <div class="param">
+      <p>#success #danger #warning #light #dark #primary #secondary</p>
+    </div>
+    <div class="example">
+      <MyButton color="success"> Success </MyButton>
+      <MyButton color="danger"> Danger </MyButton>
+      <MyButton color="warning"> Warning </MyButton>
       <MyButton color="light"> Light </MyButton>
       <MyButton color="dark"> Dark </MyButton>
       <MyButton color="primary"> Primary </MyButton>
       <MyButton color="secondary"> Secondary </MyButton></br>
-      <MyButton size="lg"> Default </MyButton>
-      <MyButton color="success" size="lg"> Success </MyButton>
-      <MyButton color="danger" size="lg"> Danger </MyButton>
-      <MyButton color="warning" size="lg"> Warning </MyButton>
-      <MyButton color="info" size="lg"> Info </MyButton>
-      <MyButton color="light" size="lg"> Light </MyButton>
-      <MyButton color="dark" size="lg"> Dark </MyButton>
-      <MyButton color="primary" size="lg"> Primary </MyButton>
-      <MyButton color="secondary" size="lg"> Secondary </MyButton></br>
-      <MyButton size="sm"> Default </MyButton>
-      <MyButton color="success" size="sm"> Success </MyButton>
-      <MyButton color="danger" size="sm"> Danger </MyButton>
-      <MyButton color="warning" size="sm"> Warning </MyButton>
-      <MyButton color="info" size="sm"> Info </MyButton>
-      <MyButton color="light" size="sm"> Light </MyButton>
-      <MyButton color="dark" size="sm"> Dark </MyButton>
-      <MyButton color="primary" size="sm"> Primary </MyButton>
-      <MyButton color="secondary" size="sm"> Secondary </MyButton>
     </div>
-  </div>
+    <div class="container">
+      <p>Sizes</p>
+    </div>
+    <div class="param">
+      <p>#lg #sm</p>
+    </div>
+    <div class="example">
+      <MyButton size="lg"> Big </MyButton>
+      <MyButton> Medium </MyButton>
+      <MyButton size="sm"> Small </MyButton>
+    </div>
+    <div class="container">
+      <p>The button takes such parameters</p>
+    </div>
+    <div class="example">
+      <MyDataTable
+        :config="config"
+        :users="users"
+        :search="search"
+      >
+      </MyDataTable>
+    </div>
+</div>
 </template>
 
 <script lang="ts">
 import MyButton from '@/components/MyButton.vue';
 import MyNavbar from '@/components/MyNavbar.vue';
+import MyDataTable from '@/components/MyDataTable.vue';
 
 export default({
   name: 'mybutton',
   components: {
     MyButton,
     MyNavbar,
+    MyDataTable,
+  },
+  data() {
+    return {
+      config: [
+        {title: '№', value: '_index'},
+        {title: 'Prop', value: 'prop'},
+        {title: 'Type', value: 'type'},
+        {title: 'Default', value: 'default'},
+        {title: 'Required', value: 'required'},
+      ],
+      users: [
+        {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No'},
+        {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No'},
+      ],
+      search: {
+        fields: ['prop', 'type'],
+        filters: [
+          (v) => v.toLowerCase(),
+        ],
+      },
+    };
   },
 });
 </script>
 
 <style lang="less">
+  .container {
+    display: flex;
+    justify-content: center;
+    background-color: wheat;
+    padding: 10px;
+    font-size: 22px;
+    margin: 15px 0;
+  }
+  .example {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .param {
+    display: flex;
+    justify-content: center;
+    & p {
+      color: Violet;
+    }
+  }
 </style>

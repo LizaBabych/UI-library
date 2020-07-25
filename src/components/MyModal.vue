@@ -47,12 +47,10 @@
 
 <style lang="less">
 @modal-width: 500px;
-
 #modal {
   display: flex;
   justify-content: center;
 }
-
 .modal-content {
   background-color: rgb(240, 240, 240);
   position: fixed;
@@ -60,18 +58,16 @@
   border-radius: 5px;
   width: @modal-width;
   z-index: 10;
-
   & h2 {
     margin: 0 0 20px 0;
     padding-left: 10px;
   }
 }
-
 button {
   background-color: rgb(180, 180, 180);
 }
-
 .modal {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,7 +75,6 @@ button {
   height: 100%;
   background-color: rgba(0,0,0,0.8);
 }
-
 .modal-head {
    background-color: rgb(180, 180, 180);
    display: flex;
@@ -89,12 +84,10 @@ button {
    border-bottom: 1px solid black;
    font-size: 18px;
 }
-
 .modal-body {
   text-align: center;
   padding: 10px 10px;
 }
-
 .modal-footer {
   display: flex;
   justify-content: center;

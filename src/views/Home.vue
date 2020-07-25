@@ -2,13 +2,11 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <img class="header-logo" src="@/favicon.png" alt="Error">
+        <router-link to="/home" style="color: blue; font-size: 30px; text-shadow: 2px 2px black;">HOME</router-link></li>
       </template>
       <template #menu>
-        <li><router-link to="/home">Home</router-link></li>
         <li><router-link to="/mybutton">MyButton</router-link></li>
         <li><router-link to="/mygrid">MyGrid</router-link></li>
-        <li><router-link to="/mynavbar">MyNavbar</router-link></li>
         <li><router-link to="/mymodal">MyModal</router-link></li>
         <li><router-link to="/mycarousel">MyCarousel</router-link></li>
         <li><router-link to="/mydatatable">MyDataTable</router-link></li>
@@ -135,14 +133,14 @@ export default({
     MyCarousel,
     MyDataTable,
   },
-  data () {
+  data() {
     return {
       cols: '12',
       pictures: [
       'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
        'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
        'https://loremflickr.com/320/240/paris,girl/all', 'https://loremflickr.com/320/240/dog', 'https://loremflickr.com/g/320/240/paris',
-       'https://loremflickr.com/320/240/paris,girl/all'
+       'https://loremflickr.com/320/240/paris,girl/all',
      ],
       config: [
         {title: '№', value: '_index'},
@@ -173,12 +171,14 @@ export default({
 
 <style lang="less">
   body {
+    background-color: lighten(LightBlue, 17%);
     margin-top: 100px;
     margin-left: 0;
     margin-right: 0;
   }
   h1 {
-    padding: 30px 0 30px 30px;
+    padding: 30px 0;
+    text-align: center;
     background-color: LightBlue;
     margin: 20px 0;
   }
