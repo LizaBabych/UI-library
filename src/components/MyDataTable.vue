@@ -19,7 +19,7 @@
               @click="sorting(col, index)"
             >
             <i :class="{
-              'fas fa-sort': koef[index] === 1,
+              'fas fa-sort': koef[index] === 1 || koef[index] === undefined,
               'fas fa-sort-up': koef[index] === -1,
               'fas fa-sort-down': koef[index] === 0}"
             >
