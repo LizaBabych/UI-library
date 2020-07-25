@@ -61,7 +61,6 @@
       <MyDataTable
         :config="config"
         :users="users"
-        :search="search"
       >
       </MyDataTable>
     </div>
@@ -93,12 +92,6 @@ export default({
         {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No'},
         {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No'},
       ],
-      search: {
-        fields: ['prop', 'type'],
-        filters: [
-          (v) => v.toLowerCase(),
-        ],
-      },
     };
   },
 });

@@ -28,7 +28,7 @@
           </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody v-if="search">
         <tr
           v-for="(item, searchInd) in searchItem"
           :key="searchInd"
@@ -39,6 +39,20 @@
             :class="{'align-right': col.type === 'number'}"
           >
           {{ col.value === '_index' ? searchInd + 1 : item[col.value] }}
+          </td>
+        </tr>
+        </tbody>
+        <tbody v-else>
+        <tr
+          v-for="(item, searchS) in sortData"
+          :key="searchS"
+        >
+          <td
+            v-for="(col, configInd) in config"
+            :key="configInd"
+            :class="{'align-right': col.type === 'number'}"
+          >
+          {{ col.value === '_index' ? searchS + 1 : item[col.value] }}
           </td>
         </tr>
         </tbody>
