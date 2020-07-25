@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@200&display=swap" rel="stylesheet">
   <link href="style/grid.css" rel="stylesheet">
   <link href="style/button.css" rel="stylesheet">
@@ -10,6 +11,7 @@
   <link href="style/burger.css" rel="stylesheet">
   <link href="style/carousel.css" rel="stylesheet">
   <link href="style/data-tables.css" rel="stylesheet">
+  <link href="style/input.css" rel="stylesheet">
   <title>UI-library</title>
 </head>
 <body>
@@ -28,6 +30,36 @@
       <div class="header-burger"><i class="fas fa-bars" id="openBurger"></i></div>
     </div>
   </div>
+  <h1>Input</h1>
+  <div id="app">
+    <!-- {{questions[0].value}} -->
+    <my-input
+      v-for="q in questions"
+      :key="q.title"
+      :type="q.type"
+      :title="q.title"
+      :placeholder="q.placeholder"
+      :required="q.required"
+      :pattern="q.pattern"
+      :errormessage="q.errormessage"
+      v-model="q.value"
+    />
+  </div>
+  <script src="js/input.js"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      questions: [
+        { title: "Как тебя зовут?", placeholder: "Иван", required: true },
+        { title: "Сколько тебе лет?", placeholder: "15", type: "number" },
+        { title: "Твой email", placeholder: "ivan@example.com", required: true,
+          pattern: /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i,
+					errormessage: 'Invalid email address.'}
+      ]
+    }
+  })
+  </script>
   <h1>Grid</h1>
   <div class="container">
     <div class="row">
@@ -160,10 +192,10 @@
  <div class="button button-sm button-light">Light</div>
 
 <h1>Modal</h1>
-<div class="button button-lg button-primary modal-trigger" data-target="send">
+<div class="button button-lg button-primary modal-trigger" data-target="modal">
   Open first example of modal window
 </div>
-<div class="modal">
+<div class="modal" id="modal">
   <div class="modal-content">
     <div class="modal-head">
       <h2>Opened first window</h2>
@@ -177,10 +209,10 @@
   </div>
 </div>
 
-<div class="button button-lg button-primary modal-trigger" data-target="send">
+<div class="button button-lg button-primary modal-trigger" data-target="modal1">
   Open second example of modal window
 </div>
-<div class="modal">
+<div class="modal" id="modal1">
   <div class="modal-content">
     <div class="modal-head">
       <h2>Opened second window</h2>
