@@ -28,8 +28,7 @@
        <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    </pre>
+    <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <p>Maximum columns is 12</p>
@@ -63,8 +62,7 @@
       <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
       <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
       <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    </pre>
+    <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <p>Also you can use one, two, four and six columns</p>
@@ -112,8 +110,7 @@
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    </pre>
+    <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <p>You can choose background color of the columns</p>
@@ -129,8 +126,7 @@
        <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"green"</span>>Green<<span class="tag">/Column</span>>
        <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"red"</span>>Red<<span class="tag">/Column</span>>
        <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"blue"</span>>Blue<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    </pre>
+    <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <p>You can use grid inside a grid</p>
@@ -152,11 +148,10 @@
             <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
          <<span class="tag">/Row</span>>
        <<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    </pre>
+    <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
-      <p>The grid takes such parameters</p>
+      <p>Properties</p>
     </div>
     <div class="example">
       <MyDataTable
@@ -184,17 +179,17 @@ export default({
   },
   data() {
     return {
-      cols: '12',
       config: [
         {title: '№', value: '_index'},
         {title: 'Prop', value: 'prop'},
         {title: 'Type', value: 'type'},
         {title: 'Default', value: 'default'},
         {title: 'Required', value: 'required'},
+        {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 30051, prop: 'Cols', type: 'String', default: '-', required: 'No'},
-        {id: 30050, prop: 'Colors', type: 'String', default: 'grey', required: 'No'},
+        {id: 30051, prop: 'Cols', type: 'String', default: '-', required: 'No', description: '...'},
+        {id: 30050, prop: 'Colors', type: 'String', default: 'grey', required: 'No', description: '...'},
       ],
     };
   },

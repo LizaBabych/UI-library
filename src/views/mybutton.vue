@@ -22,17 +22,10 @@
       <MyButton color="warning"> Warning </MyButton>
     </div>
     <div class="code">
-      <p>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"success"</span>> Success <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"danger"</span>> Danger <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"warning"</span>> Warning <
-          <span class="tag">/MyButton</span>>
-      </p>
+      <pre>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"success"</span>> Success <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"danger"</span>> Danger <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"warning"</span>> Warning <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
       <h3>Default button</h3>
@@ -41,7 +34,7 @@
       <MyButton> Default </MyButton></br>
     </div>
     <div class="code">
-      <p><<span class="tag">MyButton</span>> Default <<span class="tag">/MyButton</span>></p>
+      <pre><<span class="tag">MyButton</span>> Default <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
       <h3>Solid color variant</h3>
@@ -59,29 +52,14 @@
       <MyButton color="secondary"> Secondary </MyButton></br>
     </div>
     <div class="code">
-      <p>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"success"</span>> Success <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"danger"</span>> Danger <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"warning"</span>> Warning <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"light"</span>> Light <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"dark"</span>> Dark <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"primary"</span>> Primary <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"secondary"</span>> Secondary <
-          <span class="tag">/MyButton</span>>
-      </p>
+      <pre>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"success"</span>> Success <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"danger"</span>> Danger <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"warning"</span>> Warning <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"light"</span>> Light <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"dark"</span>> Dark <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"primary"</span>> Primary <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"secondary"</span>> Secondary <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
       <h3>Sizing</h3>
@@ -95,16 +73,10 @@
       <MyButton size="sm"> Small </MyButton>
     </div>
     <div class="code">
-      <p>
-        <<span class="tag">MyButton </span>
-          <span class="attr">size</span>=<span class="attr-string">"lg"</span>> Big <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span> > Meddium <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">size</span>=<span class="attr-string">"sm"</span>> Small <
-          <span class="tag">/MyButton</span>>
-      </p>
+      <pre>
+      <<span class="tag">MyButton </span><span class="attr">size</span>=<span class="attr-string">"lg"</span>> Big <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton</span>> Meddium <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">size</span>=<span class="attr-string">"sm"</span>> Small <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
       <h3>Buttons has disable parametr</h3>
@@ -119,39 +91,17 @@
       <MyButton color="secondary" class="disabled"> Disabled </MyButton></br>
     </div>
     <div class="code">
-      <p>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"success" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"danger" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"warning" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"light" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"dark" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"primary" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-        <<span class="tag">MyButton </span>
-          <span class="attr">color</span>=<span class="attr-string">"secondary" </span>
-          <span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <
-          <span class="tag">/MyButton</span>></br>
-      </p>
+      <pre>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"success" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"danger" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"warning" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"light" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"dark" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"primary" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
+      <<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"secondary" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
-      <h3>The button takes such parameters</h3>
+      <h3>Properties</h3>
     </div>
     <div class="example">
       <MyDataTable
@@ -160,7 +110,7 @@
       >
       </MyDataTable>
     </div>
-</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -183,10 +133,11 @@ export default({
         {title: 'Type', value: 'type'},
         {title: 'Default', value: 'default'},
         {title: 'Required', value: 'required'},
+        {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No'},
-        {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No'},
+        {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No', description: '...'},
+        {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No', description: '...'},
       ],
     };
   },
@@ -232,7 +183,7 @@ export default({
     display: flex;
     justify-content: center;
     background-color: #f9f9f9;
-    margin: 5px 25%;
+    margin: 5px 20%;
     font-size: 18px;
     color: #383a42;
     padding: 15px;

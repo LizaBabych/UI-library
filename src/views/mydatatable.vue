@@ -23,6 +23,14 @@
       >
       </MyDataTable>
     </div>
+    <div class="code">
+      <pre>
+      <<span class="tag">MyDataTable </span>
+          :<span class="attr">config</span>=<span class="attr-string"> "config"</span>
+          :<span class="attr">users</span>=<span class="attr-string">"users"</span>
+      >
+      <<span class="tag">/MyDataTable</span>></pre>
+    </div>
     <div class="container">
         <p>Table has sorting. We need use param sortable</p>
     </div>
@@ -33,6 +41,14 @@
       >
       </MyDataTable>
     </div>
+    <div class="code">
+      <pre>
+      <<span class="tag">MyDataTable </span>
+          :<span class="attr">config</span>=<span class="attr-string">"config"</span>
+          :<span class="attr">users</span>=<span class="attr-string">"users"</span>
+      >
+      <<span class="tag">/MyDataTable</span>></pre>
+    </div>
     <div class="container">
         <p>Table has search</p>
     </div>
@@ -41,6 +57,25 @@
         :config="config"
         :users="users"
         :search="search"
+      >
+      </MyDataTable>
+    </div>
+    <div class="code">
+      <pre>
+      <<span class="tag">MyDataTable </span>
+          :<span class="attr">config</span>=<span class="attr-string">"config"</span>
+          :<span class="attr">users</span>=<span class="attr-string">"users"</span>
+          :<span class="attr">search</span>=<span class="attr-string">"search"</span>
+      >
+      <<span class="tag">/MyDataTable</span>></pre>
+    </div>
+    <div class="container">
+      <p>Properties</p>
+    </div>
+    <div class="example">
+      <MyDataTable
+        :config="config1"
+        :users="users1"
       >
       </MyDataTable>
     </div>
@@ -71,6 +106,19 @@ export default({
         {id: 30052, name: 'Вася', surname: 'Абрамов', age: 13},
         {id: 30053, name: 'Вася', surname: 'Бровкин', age: 18},
         {id: 30054, name: 'Вася', surname: 'Каролович', age: 11},
+      ],
+      config1: [
+        {title: '№', value: '_index'},
+        {title: 'Prop', value: 'prop'},
+        {title: 'Type', value: 'type'},
+        {title: 'Default', value: 'default'},
+        {title: 'Required', value: 'required'},
+        {title: 'Description', value: 'description'},
+      ],
+      users1: [
+        {id: 30050, prop: 'users', type: 'Array', default: '-', required: 'Yes', description: '...'},
+        {id: 30051, prop: 'config', type: 'Array', default: '-', required: 'Yes', description: '...'},
+        {id: 30052, prop: 'search', type: 'Object', default: 'null', required: 'No', description: '...'},
       ],
       search: {
         fields: ['name', 'surname'],

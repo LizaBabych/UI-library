@@ -22,9 +22,8 @@
     </div>
     <div class="code">
     <pre>
-    <<span class="tag">MyCarousel</span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>>
-    <<span class="tag">/MyCarousel</span>>
-    </pre>
+    <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>>
+    <<span class="tag">/MyCarousel</span>></pre>
     </div>
     <div class="container">
       <p>Carousel has different sizes</p>
@@ -36,6 +35,12 @@
       <MyCarousel :pictures="pictures" imageWidth="500">
       </MyCarousel></br>
     </div>
+    <div class="code">
+    <pre>
+      <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
+      <span class="attr">imageWidth</span>=<span class="attr-string">"500"</span>>
+      <<span class="tag">/MyCarousel</span>></pre>
+    </div>
     <div class="param">
       <p>#image width = 250</p>
     </div>
@@ -43,8 +48,14 @@
       <MyCarousel :pictures="pictures" imageWidth="250">
       </MyCarousel>
     </div>
+    <div class="code">
+    <pre>
+    <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
+    <span class="attr">imageWidth</span>=<span class="attr-string">"250"</span>>
+    <<span class="tag">/MyCarousel</span>></pre>
+    </div>
     <div class="container">
-      <p>The carousel takes such parameters</p>
+      <p>Properties</p>
     </div>
     <MyDataTable
       :config="config"
@@ -80,10 +91,11 @@ export default({
        {title: 'Type', value: 'type'},
        {title: 'Default', value: 'default'},
        {title: 'Required', value: 'required'},
+       {title: 'Description', value: 'description'},
      ],
      users: [
-       {id: 30050, prop: 'pictures', type: 'Array', default: '-', required: 'Yes'},
-       {id: 30051, prop: 'imageWidth', type: 'String', default: '320', required: 'No'},
+       {id: 30050, prop: 'pictures', type: 'Array', default: '-', required: 'Yes', description: '...'},
+       {id: 30051, prop: 'imageWidth', type: 'String', default: '320', required: 'No', description: '...'},
      ],
     };
   },

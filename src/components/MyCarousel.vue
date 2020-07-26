@@ -66,7 +66,6 @@
 }
 .prev, .next  {
   background-color: @button-color;
-  transition: 1s;
   position: absolute;
   cursor: pointer;
   font-size: 18px;
