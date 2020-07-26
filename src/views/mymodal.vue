@@ -2,20 +2,24 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <router-link to="/home" style="color: blue; font-size: 30px; text-shadow: 2px 2px black;">HOME</router-link></li>
+        <router-link class='logo-link' to="/home">HOME</router-link></li>
       </template>
       <template #menu>
-        <li><router-link to="/mybutton">MyButton</router-link></li>
-        <li><router-link to="/mygrid">MyGrid</router-link></li>
-        <li><router-link to="/mymodal">MyModal</router-link></li>
-        <li><router-link to="/mycarousel">MyCarousel</router-link></li>
-        <li><router-link to="/mydatatable">MyDataTable</router-link></li>
+        <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
+        <li><router-link class="burger-link" to="/mygrid">MyGrid</router-link></li>
+        <li><router-link class="burger-link" to="/mymodal">MyModal</router-link></li>
+        <li><router-link class="burger-link" to="/mycarousel">MyCarousel</router-link></li>
+        <li><router-link class="burger-link" to="/mydatatable">MyDataTable</router-link></li>
       </template>
     </MyNavbar>
       <h1>Modal</h1>
+      <div class="container">
+          <p>Use the component button for actions in forms, dialogs, and more. </p>
+      </div>
+      <div class="example">
       <MyModal>
         <template #trigger>
-          <button>Open modal</button>
+          <MyButton>Open modal</MyButton>
         </template>
         <template #head>
           HEADER
@@ -25,13 +29,16 @@
           consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </template>
         <template #footer>
-          <button>Okey</button>
+          <MyButton color='success' size='sm'>Okey</MyButton>
         </template>
       </MyModal>
+      </div>
+
   </div>
 </template>
 
 <script lang="ts">
+import MyButton from '@/components/MyButton.vue';
 import MyModal from '@/components/MyModal.vue';
 import MyNavbar from '@/components/MyNavbar.vue';
 
@@ -40,6 +47,7 @@ export default({
   components: {
     MyModal,
     MyNavbar,
+    MyButton,
   },
 });
 </script>

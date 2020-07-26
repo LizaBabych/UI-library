@@ -2,10 +2,10 @@
   <div>
     <div @click='openModal'>
       <slot name='trigger'>
-        <button></button>
+        <button>Open</button>
       </slot>
     </div>
-    <div id="modal">
+    <div class="modal-container">
       <div class='modal' v-if='visible'></div>
       <div class='modal-content' v-if="visible">
         <div class='modal-head'>
@@ -47,7 +47,7 @@
 
 <style lang="less">
 @modal-width: 500px;
-#modal {
+.modal-container {
   display: flex;
   justify-content: center;
 }
@@ -57,14 +57,7 @@
   border: 1px solid gray;
   border-radius: 5px;
   width: @modal-width;
-  z-index: 10;
-  & h2 {
-    margin: 0 0 20px 0;
-    padding-left: 10px;
-  }
-}
-button {
-  background-color: rgb(180, 180, 180);
+  z-index: 1;
 }
 .modal {
   z-index: 1;
@@ -76,13 +69,13 @@ button {
   background-color: rgba(0,0,0,0.8);
 }
 .modal-head {
-   background-color: rgb(180, 180, 180);
-   display: flex;
-   padding: 5px;
-   justify-content: space-between;
-   align-items: flex-start;
-   border-bottom: 1px solid black;
-   font-size: 18px;
+  background-color: rgb(180, 180, 180);
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid black;
+  font-size: 18px;
 }
 .modal-body {
   text-align: center;

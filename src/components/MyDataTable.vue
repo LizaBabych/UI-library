@@ -62,7 +62,7 @@
 </template>
 
 <script>
-  //import '@fortawesome/fontawesome-free/css/all.css';
+  // import '@fortawesome/fontawesome-free/css/all.css';
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyDataTable',
@@ -109,19 +109,19 @@
     computed: {
       searchItem() {
         const searchUser = [];
-          this.sortData.forEach((item) => {
-            for (const index in item) {
-              this.search.fields.forEach((field) => {
-                if (index === field) {
-                  this.search.filters.forEach((filter) => {
-                     if (filter(item[index]).includes(filter(this.value)) && !searchUser.includes(item)) {
-                        searchUser.push(item);
-                     }
-                  });
-                }
-              });
-            }
-          });
+        this.sortData.forEach((item) => {
+          for (const index in item) {
+            this.search.fields.forEach((field) => {
+              if (index === field) {
+                this.search.filters.forEach((filter) => {
+                   if (filter(item[index]).includes(filter(this.value)) && !searchUser.includes(item)) {
+                      searchUser.push(item);
+                   }
+                });
+              }
+            });
+          }
+        });
         return searchUser;
       },
     },

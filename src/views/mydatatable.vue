@@ -2,23 +2,47 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <router-link to="/home" style="color: blue; font-size: 30px; text-shadow: 2px 2px black;">HOME</router-link></li>
+        <router-link class='logo-link' to="/home">HOME</router-link></li>
       </template>
       <template #menu>
-        <li><router-link to="/mybutton">MyButton</router-link></li>
-        <li><router-link to="/mygrid">MyGrid</router-link></li>
-        <li><router-link to="/mymodal">MyModal</router-link></li>
-        <li><router-link to="/mycarousel">MyCarousel</router-link></li>
-        <li><router-link to="/mydatatable">MyDataTable</router-link></li>
+        <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
+        <li><router-link class="burger-link" to="/mygrid">MyGrid</router-link></li>
+        <li><router-link class="burger-link" to="/mymodal">MyModal</router-link></li>
+        <li><router-link class="burger-link" to="/mycarousel">MyCarousel</router-link></li>
+        <li><router-link class="burger-link" to="/mydatatable">MyDataTable</router-link></li>
       </template>
     </MyNavbar>
-    <div id="datatable">
-      <h1>Data-table</h1>
+    <h1>Data-table</h1>
+    <div class="container">
+        <p>Use the component table for actions in forms, dialogs, and more. </p>
+    </div>
+    <div class="example">
+      <MyDataTable
+        :config="config"
+        :users="users"
+      >
+      </MyDataTable>
+    </div>
+    <div class="container">
+        <p>Table has sorting. We need use param sortable</p>
+    </div>
+    <div class="example">
+      <MyDataTable
+        :config="config"
+        :users="users"
+      >
+      </MyDataTable>
+    </div>
+    <div class="container">
+        <p>Table has search</p>
+    </div>
+    <div class="example">
       <MyDataTable
         :config="config"
         :users="users"
         :search="search"
-      />
+      >
+      </MyDataTable>
     </div>
   </div>
 </template>
@@ -44,12 +68,9 @@ export default({
       users: [
         {id: 30050, name: 'Вася', surname: 'Петров', age: 12},
         {id: 30051, name: 'Вася', surname: 'Васечкин', age: 15},
-        {id: 30050, name: 'Вася', surname: 'Абрамов', age: 13},
-        {id: 30051, name: 'Вася', surname: 'Бровкин', age: 18},
-        {id: 30050, name: 'Вася', surname: 'Каролович', age: 11},
-        {id: 30051, name: 'Вася', surname: 'Мишкин', age: 10},
-        {id: 30050, name: 'Вася', surname: 'Цветочек', age: 19},
-        {id: 30051, name: 'Вася', surname: 'Иванов', age: 25},
+        {id: 30052, name: 'Вася', surname: 'Абрамов', age: 13},
+        {id: 30053, name: 'Вася', surname: 'Бровкин', age: 18},
+        {id: 30054, name: 'Вася', surname: 'Каролович', age: 11},
       ],
       search: {
         fields: ['name', 'surname'],

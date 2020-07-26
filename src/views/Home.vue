@@ -2,14 +2,14 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <router-link to="/home" style="color: blue; font-size: 30px; text-shadow: 2px 2px black;">HOME</router-link></li>
+        <router-link class='logo-link' to="/home">HOME</router-link></li>
       </template>
       <template #menu>
-        <li><router-link to="/mybutton">MyButton</router-link></li>
-        <li><router-link to="/mygrid">MyGrid</router-link></li>
-        <li><router-link to="/mymodal">MyModal</router-link></li>
-        <li><router-link to="/mycarousel">MyCarousel</router-link></li>
-        <li><router-link to="/mydatatable">MyDataTable</router-link></li>
+        <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
+        <li><router-link class="burger-link" to="/mygrid">MyGrid</router-link></li>
+        <li><router-link class="burger-link" to="/mymodal">MyModal</router-link></li>
+        <li><router-link class="burger-link" to="/mycarousel">MyCarousel</router-link></li>
+        <li><router-link class="burger-link" to="/mydatatable">MyDataTable</router-link></li>
       </template>
     </MyNavbar>
     <h1>Modal</h1>
@@ -56,7 +56,15 @@
     <MyButton color="light" size="sm"> Light </MyButton>
     <MyButton color="dark" size="sm"> Dark </MyButton>
     <MyButton color="primary" size="sm"> Primary </MyButton>
-    <MyButton color="secondary" size="sm"> Secondary </MyButton>
+    <MyButton color="secondary" size="sm"> Secondary </MyButton></br>
+    <MyButton color="success" class="disabled"> Success </MyButton>
+    <MyButton color="danger" class="disabled"> Danger </MyButton>
+    <MyButton color="warning" class="disabled"> Warning </MyButton>
+    <MyButton color="info" class="disabled"> Info </MyButton>
+    <MyButton color="light" class="disabled"> Light </MyButton>
+    <MyButton color="dark" class="disabled"> Dark </MyButton>
+    <MyButton color="primary" class="disabled"> Primary </MyButton>
+    <MyButton color="secondary" class="disabled"> Secondary </MyButton>
 
     <h1>Grid</h1>
     <Row>
@@ -171,10 +179,19 @@ export default({
 
 <style lang="less">
   body {
-    background-color: lighten(LightBlue, 17%);
     margin-top: 100px;
     margin-left: 0;
     margin-right: 0;
+  }
+  .burger-link {
+    font-size: 20px;
+    color: rgb(77, 0, 174);
+    font-weight: bold;
+  }
+  .logo-link {
+    color: blue;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
   }
   h1 {
     padding: 30px 0;

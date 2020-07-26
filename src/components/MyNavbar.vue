@@ -21,7 +21,7 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-	name: 'MyNavbar',
+  name: 'MyNavbar',
   data() {
     return {
       burgerOpen: true,
@@ -30,8 +30,8 @@ export default Vue.extend({
   methods: {
     openMobileBurger() {
       this.burgerOpen = !this.burgerOpen;
-    }
-  }
+    },
+  },
 });
 </script>
 

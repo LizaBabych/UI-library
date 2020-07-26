@@ -31,8 +31,8 @@
         required: true,
       },
       imageWidth: {
-        type: Number,
-        default: 320,
+        type: String,
+        default: '320',
       },
     },
     data() {
