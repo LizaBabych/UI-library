@@ -15,8 +15,11 @@
 
     <h1>Grid</h1>
     <div class="container">
-      <p>Use the component grid for actions in forms, dialogs, and more. </p>
+      <h3>Layout and Grid System</h3>
     </div>
+    <p class="parag">Grid system uses a series of containers, rows, and columns to layout and align content.</p>
+    <p class="parag">The example creates three equal-width columns on small, medium, large, and extra large devices using predefined grid classes. Those columns are centered in the page.</p>
+    <p class="parag">Thanks to flexbox, grid columns without a set width will automatically layout with equal widths.</p>
     <Row>
       <Column>3</Column>
       <Column>3</Column>
@@ -31,41 +34,7 @@
     <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
-      <p>Maximum columns is 12</p>
-    </div>
-    <Row>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-      <Column>12</Column>
-    </Row>
-    <div class="code">
-    <pre>
-    <<span class="tag">Row</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>></pre>
-    </div>
-    <div class="container">
-      <p>Also you can use one, two, four and six columns</p>
+      <h3>Auto-layout columns</h3>
     </div>
     <Row>
       <Column>1</Column>
@@ -87,6 +56,20 @@
       <Column>6</Column>
       <Column>6</Column>
       <Column>6</Column>
+    </Row>
+    <Row>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
+      <Column>12</Column>
     </Row>
     <div class="code">
     <pre>
@@ -110,11 +93,27 @@
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
        <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+    <<span class="tag">/Row</span>>
+    <<span class="tag">Row</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
     <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
-      <p>You can choose background color of the columns</p>
+      <h3>Background color of columns</h3>
     </div>
+    <p class="parag">Specify a background color.</p>
+    <p class="parag">Default color is grey.</p>
     <Row>
       <Column color="green">Green</Column>
       <Column color="red">Red</Column>
@@ -129,8 +128,9 @@
     <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
-      <p>You can use grid inside a grid</p>
+      <h3>Nested rows</h3>
     </div>
+    <p class="parag">Insert new row into the column so that this line appears in it as shown in the example below.</p>
     <Row>
       <Column color="LightGrey">
         <Row>
@@ -151,7 +151,7 @@
     <<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
-      <p>Properties</p>
+      <h3>Properties</h3>
     </div>
     <div class="example">
       <MyDataTable
@@ -188,8 +188,10 @@ export default({
         {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 30051, prop: 'Cols', type: 'String', default: '-', required: 'No', description: '...'},
-        {id: 30050, prop: 'Colors', type: 'String', default: 'grey', required: 'No', description: '...'},
+        {id: 1, prop: 'сols', type: 'String', default: '-', required: 'No',
+        description: 'Specify the number of columns'},
+        {id: 2, prop: 'сolors', type: 'String', default: 'grey', required: 'No',
+        description: 'Specify a background color'},
       ],
     };
   },

@@ -14,8 +14,9 @@
     </MyNavbar>
     <h1>Button</h1>
     <div class="container">
-        <h3>Use the component button for actions in forms, dialogs, and more. </h3>
+      <h3>Use MyButton component for actions in forms, dialogs, and more.</h3>
     </div>
+    <p class="parag">Includes support for sizes and colors.</p>
     <div class="example">
       <MyButton color="success"> Success </MyButton>
       <MyButton color="danger"> Danger </MyButton>
@@ -30,6 +31,7 @@
     <div class="container">
       <h3>Default button</h3>
     </div>
+    <p class="parag">By default, the button has a color - primary, size - medium.</p>
     <div class="example">
       <MyButton> Default </MyButton></br>
     </div>
@@ -39,9 +41,8 @@
     <div class="container">
       <h3>Solid color variant</h3>
     </div>
-    <div class="param">
-      <p>#success #danger #warning #light #dark #primary #secondary</p>
-    </div>
+    <p class="parag">Use the variant prop to generate the various contextual button variants.</p>
+    <p class="param">#success #danger #warning #light #dark #primary #secondary</p>
     <div class="example">
       <MyButton color="success"> Success </MyButton>
       <MyButton color="danger"> Danger </MyButton>
@@ -64,9 +65,9 @@
     <div class="container">
       <h3>Sizing</h3>
     </div>
-    <div class="param">
-      <p>#lg #sm</p>
-    </div>
+    <p class="parag">Use the variant prop to generate the sizing button variants.</p>
+    <p class="parag">By default, the button will be displayed at a medium size.</p>
+    <p class="param">#lg #sm</p>
     <div class="example">
       <MyButton size="lg"> Big </MyButton>
       <MyButton> Medium </MyButton>
@@ -79,8 +80,9 @@
       <<span class="tag">MyButton </span><span class="attr">size</span>=<span class="attr-string">"sm"</span>> Small <<span class="tag">/MyButton</span>></pre>
     </div>
     <div class="container">
-      <h3>Buttons has disable parametr</h3>
+      <h3>Disabled state</h3>
     </div>
+    <p class="parag">Set the disabled class to disable button default functionality.</p>
     <div class="example">
       <MyButton color="success" class="disabled"> Disabled </MyButton>
       <MyButton color="danger" class="disabled"> Disabled </MyButton>
@@ -136,8 +138,8 @@ export default({
         {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No', description: '...'},
-        {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No', description: '...'},
+        {id: 1, prop: 'Color', type: 'String', default: 'medium', required: 'No', description: 'Applies one of the theme color variants to the component'},
+        {id: 2, prop: 'Size', type: 'String', default: 'primary', required: 'No', description: 'Set the size of the component\'s appearance. \'sm\' or \'lg\''},
       ],
     };
   },
@@ -147,14 +149,20 @@ export default({
 <style lang="less">
   h3 {
     font-weight: normal;
+    font-size: 22px;
+  }
+  .parag {
+    margin: 0;
+    text-align: center;
+    background-color: rgb(255, 255, 223);
+    padding: 10px;
   }
   .container {
     display: flex;
     justify-content: center;
     background-color: wheat;
     padding: 10px;
-    font-size: 22px;
-    margin: 15px 0;
+    margin-top: 15px;
   }
   .example {
     display: flex;
@@ -163,12 +171,11 @@ export default({
     border: 1px solid rgba(0,0,0,.125);
     padding: 15px;
   }
+  p {
+    text-align: center;
+  }
   .param {
-    display: flex;
-    justify-content: center;
-    & p {
-      color: Violet;
-    }
+    color: Violet;
   }
   .tag {
     color: #e45649;

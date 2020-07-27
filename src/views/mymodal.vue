@@ -14,18 +14,18 @@
     </MyNavbar>
     <h1>Modal</h1>
     <div class="container">
-        <h3>Use the component button for actions in forms, dialogs, and more. </h3>
+      <h3>Default modal window</h3>
     </div>
     <div class="example">
     <MyModal></MyModal>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyModal</span>><<span class="tag">/MyModal</span>></pre>
+      <pre><<span class="tag">MyModal</span>><<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
-        <h3>Modal has three slots: header/body/footer </h3>
+      <h3>Slots</h3>
     </div>
+    <p class="parag">Modal has three slots: header/body/footer </p>
     <div class="example">
       <MyModal>
         <template #head>
@@ -58,7 +58,7 @@
       <<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
-        <h3> You can add components, which trigger modal</h3>
+      <h3>Trigger slot</h3>
     </div>
     <div class="example">
       <MyModal>
@@ -98,7 +98,7 @@
       <<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
-      <h3>Properties</h3>
+      <h3>Events</h3>
     </div>
     <div class="example">
       <MyDataTable
@@ -135,8 +135,10 @@ export default({
         {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 30050, prop: 'Color', type: 'String', default: 'medium', required: 'No', description: '...'},
-        {id: 30051, prop: 'Size', type: 'String', default: 'primary', required: 'No', description: '...'},
+        {id: 1, prop: 'Color', type: 'String', default: 'medium', required: 'No',
+        description: 'Applies one of the theme color variants to the component'},
+        {id: 2, prop: 'Size', type: 'String', default: 'primary', required: 'No',
+        description: 'Set the size of the component\s appearance'},
       ],
     };
   },
