@@ -23,11 +23,14 @@
 
 <script lang="ts">
   import Vue from 'vue';
+
+  type ICarouselConfig = string[];
+
   export default Vue.extend({
     name: 'MyCarousel',
     props: {
       pictures: {
-        type: Array,
+        type: Array as () => ICarouselConfig,
         required: true,
       },
       imageWidth: {
@@ -41,7 +44,7 @@
       };
     },
     computed: {
-      sliding() {
+      sliding(): any {
         return { 'margin-left': -this.slideNum * this.imageWidth + 'px'};
       },
     },

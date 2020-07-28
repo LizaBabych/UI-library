@@ -1,16 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/home">Home</router-link> |
-      <router-link to="/mybutton">MyButton</router-link> |
-      <router-link to="/mygrid">MyGrid</router-link> |
-      <router-link to="/mymodal">MyModal</router-link> |
-      <router-link to="/mycarousel">MyCarousel</router-link> |
-      <router-link to="/mydatatable">MyDataTable</router-link>
-    </div>
+    <MyNavbar class="nav">
+      <template #logo>
+        <router-link class='logo-link' to="/home">HOME</router-link></li>
+      </template>
+      <template #menu>
+        <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
+        <li><router-link class="burger-link" to="/mygrid">MyGrid</router-link></li>
+        <li><router-link class="burger-link" to="/mymodal">MyModal</router-link></li>
+        <li><router-link class="burger-link" to="/mycarousel">MyCarousel</router-link></li>
+        <li><router-link class="burger-link" to="/mydatatable">MyDataTable</router-link></li>
+      </template>
+    </MyNavbar>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import MyNavbar from '@/components/MyNavbar.vue';
+export default({
+  name: 'App',
+  components: {
+    MyNavbar,
+  },
+});
+</script>
 
 <style lang="less">
   #app {
@@ -18,15 +32,52 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  #nav {
-    padding: 10px;
+  h3 {
+    font-weight: normal;
+    font-size: 22px;
+  }
+  .parag {
+    margin: 0;
     text-align: center;
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-      &.router-link-exact-active {
-        color: rgb(77, 0, 174);
-      }
-    }
+    background-color: rgb(255, 255, 223);
+    padding: 10px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    background-color: wheat;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  .example {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 15px;
+  }
+  p {
+    text-align: center;
+  }
+  .param {
+    color: Violet;
+  }
+  .tag {
+    color: #e45649;
+  }
+  .attr {
+    color: #986801;
+  }
+  .attr-string {
+    color: #50a14f;
+  }
+  .code {
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    color: #383a42;
+    padding: 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.125);
   }
 </style>

@@ -6,11 +6,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
+type Column = string | number;
+
 export default Vue.extend({
   name: 'Column',
   props: {
    cols: {
-      type: String,
+      type: String as () => Column,
    },
    color: {
      type: String,

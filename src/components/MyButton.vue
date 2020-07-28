@@ -7,19 +7,23 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
+type Color = 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'primary' | 'secondary';
+type Size = 'sm' | 'lg';
+
 export default Vue.extend({
   name: 'MyButton',
   props: {
     size: {
-      type: String,
+      type: String as () => Size,
     },
     color: {
-      type: String,
+      type: String as () => Color,
       default: 'primary',
     },
   },
   methods: {
-    sendClick() {
+    sendClick(): void {
       this.$emit('click');
     },
   },

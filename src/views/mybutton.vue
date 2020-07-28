@@ -1,17 +1,5 @@
 <template>
   <div id="app">
-    <MyNavbar>
-      <template #logo>
-        <router-link class='logo-link' to="/home">HOME</router-link></li>
-      </template>
-      <template #menu>
-        <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
-        <li><router-link class="burger-link" to="/mygrid">MyGrid</router-link></li>
-        <li><router-link class="burger-link" to="/mymodal">MyModal</router-link></li>
-        <li><router-link class="burger-link" to="/mycarousel">MyCarousel</router-link></li>
-        <li><router-link class="burger-link" to="/mydatatable">MyDataTable</router-link></li>
-      </template>
-    </MyNavbar>
     <h1>Button</h1>
     <div class="container">
       <h3>Use MyButton component for actions in forms, dialogs, and more.</h3>
@@ -147,53 +135,5 @@ export default({
 </script>
 
 <style lang="less">
-  h3 {
-    font-weight: normal;
-    font-size: 22px;
-  }
-  .parag {
-    margin: 0;
-    text-align: center;
-    background-color: rgb(255, 255, 223);
-    padding: 10px;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    background-color: wheat;
-    padding: 10px;
-    margin-top: 15px;
-  }
-  .example {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    border: 1px solid rgba(0,0,0,.125);
-    padding: 15px;
-  }
-  p {
-    text-align: center;
-  }
-  .param {
-    color: Violet;
-  }
-  .tag {
-    color: #e45649;
-  }
-  .attr {
-    color: #986801;
-  }
-  .attr-string {
-    color: #50a14f;
-  }
-  .code {
-    display: flex;
-    justify-content: center;
-    background-color: #f9f9f9;
-    margin: 5px 20%;
-    font-size: 18px;
-    color: #383a42;
-    padding: 15px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.125);
-  }
+
 </style>
