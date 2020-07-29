@@ -100,7 +100,7 @@
       <h3>Background color of columns</h3>
     </div>
     <p class="parag">Specify a background color.</p>
-    <p class="parag">Default color is grey.</p>
+    <p class="parag">Default color is gray.</p>
     <Row>
       <Column color="green">Green</Column>
       <Column color="red">Red</Column>

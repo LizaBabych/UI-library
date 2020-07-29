@@ -63,11 +63,13 @@
     <div class="container">
       <h3>Properties</h3>
     </div>
-    <MyDataTable
-      :config="config"
-      :users="users"
-    >
-    </MyDataTable>
+    <div class="example">
+      <MyDataTable
+        :config="config"
+        :users="users"
+      >
+      </MyDataTable>
+    </div>
   </div>
 </template>
 

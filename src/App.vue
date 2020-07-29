@@ -51,33 +51,63 @@ export default({
   }
   .example {
     display: flex;
-    justify-content: center;
     align-items: baseline;
     border: 1px solid rgba(0,0,0,.125);
     padding: 15px;
   }
-  p {
-    text-align: center;
-  }
-  .param {
-    color: Violet;
-  }
-  .tag {
-    color: #e45649;
-  }
-  .attr {
-    color: #986801;
-  }
-  .attr-string {
-    color: #50a14f;
-  }
+  p { text-align: center; }
+  .param { color: Violet; }
+  .tag { color: #e45649; }
+  .attr { color: #986801; }
+  .attr-string { color: #50a14f; }
   .code {
     display: flex;
     justify-content: center;
     background-color: #f9f9f9;
     font-size: 18px;
     color: #383a42;
-    padding: 15px;
     box-shadow: 0 1px 1px rgba(0,0,0,.125);
   }
+  @media screen and (min-width: 992px) {
+    #app {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 900px;
+      margin: 0 10%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    #app { width: 600px; }
+    .code {
+      display: flex;
+      justify-content: flex-start;
+      overflow-x: scroll;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    #app {
+      width: 100%;
+    }
+    h1 { font-size: 70px; }
+    h3 {
+      font-size: 40px;
+      text-align: left;
+    }
+    .parag {
+      font-size: 35px;
+      text-align: left;
+    }
+    .param { font-size: 35px; }
+    .code {
+      font-size: 30px;
+      overflow-x: scroll;
+      padding-left: 0;
+    }
+    .example {
+      overflow-x: scroll;
+      padding-left: 0;
+    }
+  }
+
 </style>

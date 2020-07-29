@@ -1,5 +1,5 @@
 <template>
-  <div id="table">
+  <div class="table">
     <div class="usersTable">
       <input id="table-search-input" placeholder="Search"
         v-if="search"
@@ -133,7 +133,7 @@
 @border-color: rgb(120, 120, 120);
 @tcell-color: rgba(255, 99, 71, 0.2);
 @tcell-hover-color: rgba(255, 99, 71, 0.4);
-#table {
+.table {
   display: flex;
   justify-content: center;
 }
@@ -164,7 +164,7 @@
     }
     & td, th {
       border: 1px solid @border-color;
-      padding: 10px 10px;
+      padding: 10px;
       background-color: @tcell-color;
       text-align: center;
     }
@@ -173,6 +173,16 @@
       cursor: pointer;
     }
     & .align-right { text-align: right; }
+  }
+}
+@media screen and (max-width: 768px) {
+  .usersTable {
+    #table-search-input {
+      height: 60px;
+    }
+    & table {
+      font-size: 30px;
+    }
   }
 }
 </style>

@@ -5,9 +5,9 @@
         <button>Open</button>
       </slot>
     </div>
-    <div class="modal-container">
-      <div class='modal' v-if='visible'></div>
-      <div class='modal-content' v-if="visible">
+    <div class="modal-container" v-if='visible'>
+      <div class='modal'></div>
+      <div class='modal-content'>
         <div class='modal-head'>
           <slot name="head">Head</slot>
           <button @click='closeModal'>X</button>
@@ -73,7 +73,6 @@
   display: flex;
   padding: 5px;
   justify-content: space-between;
-  align-items: flex-start;
   border-bottom: 1px solid black;
   font-size: 18px;
 }

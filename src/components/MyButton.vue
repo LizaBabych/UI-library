@@ -41,7 +41,6 @@ export default Vue.extend({
 @light: LightGray;
 
 .button {
-  display: inline-block;
   padding: 10px;
 	border: 1px solid black;
   border-radius: 5px;
@@ -87,5 +86,19 @@ a {
     cursor: pointer;
     box-shadow: 0 0 10px gray;
   }
+}
+@media screen and (max-width: 768px) {
+	.button {
+	  padding: 20px;
+		font-size: 25px;
+	}
+	.button-lg {
+	  padding: 30px;
+	  font-size: 35px;
+	}
+	.button-sm {
+	  padding: 10px;
+	  font-size: 20px;
+	}
 }
 </style>

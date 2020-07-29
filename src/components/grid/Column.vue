@@ -38,4 +38,11 @@ export default Vue.extend({
 	.grid(@columns, (@i + 1));
 }
 .grid(@columns);
+
+@media screen and (max-width: 767px) {
+	.col {
+		padding: 25px;
+		font-size: 30px;
+	}
+}
 </style>

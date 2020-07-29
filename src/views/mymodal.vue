@@ -13,7 +13,10 @@
     <div class="container">
       <h3>Slots</h3>
     </div>
-    <p class="parag">Modal has three slots: header/body/footer </p>
+    <p class="parag">The modal includes a header, body, and footer.</p>
+    <p class="parag">To specify the value of the body header and footer, you need to specify the content in the "template" tag.</p>
+    <p class="parag">There is a button in the header of the modal window, by clicking which the window is closed.</p>
+    <p class="param">#head #body #footer</p>
     <div class="example">
       <MyModal>
         <template #head>
@@ -48,6 +51,8 @@
     <div class="container">
       <h3>Trigger slot</h3>
     </div>
+    <p class="parag">Specify the component that will cause the modal to open.</p>
+    <p class="param">#trigger</p>
     <div class="example">
       <MyModal>
         <template #trigger>
@@ -116,17 +121,15 @@ export default({
     return {
       config: [
         {title: '№', value: '_index'},
-        {title: 'Prop', value: 'prop'},
-        {title: 'Type', value: 'type'},
-        {title: 'Default', value: 'default'},
-        {title: 'Required', value: 'required'},
+        {title: 'Event', value: 'event'},
+        {title: 'Arguments', value: 'arg'},
         {title: 'Description', value: 'description'},
       ],
       users: [
-        {id: 1, prop: 'Color', type: 'String', default: 'medium', required: 'No',
-        description: 'Applies one of the theme color variants to the component'},
-        {id: 2, prop: 'Size', type: 'String', default: 'primary', required: 'No',
-        description: 'Set the size of the component\s appearance'},
+        {id: 1, event: 'openModal', arg: '-',
+        description: 'Open current modal window'},
+        {id: 2, event: 'closeModal', arg: '-',
+        description: 'Close current modal window'},
       ],
     };
   },

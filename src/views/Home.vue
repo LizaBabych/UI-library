@@ -1,12 +1,9 @@
 <template>
   <div id="app">
     <div class="home-width">
-      <img src="@/library.jpg" alt="Error" width="300px" height="300px"></img></br>
+      <img src="@/library.jpg" alt="Error"></img></br>
     </div>
     <h2 class="title">UI-library</h2>
-    <div class="cont">
-
-    </div>
   </div>
 </template>
 
@@ -38,11 +35,17 @@ export default({
     background-color: LightBlue;
     margin: 20px 0;
   }
-  .home-width, .cont {
+  .cont {
     display: flex;
     justify-content: center;
   }
-  .title {
-    text-align: center;
+  .home-width {
+    display: flex;
+    justify-content: center;
+    & img {
+      width: 300px;
+      height: 300px;
+    }
   }
+  .title { text-align: center; }
 </style>
