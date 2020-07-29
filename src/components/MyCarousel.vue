@@ -44,8 +44,8 @@
       };
     },
     computed: {
-      sliding(): any {
-        return { 'margin-left': -this.slideNum * this.imageWidth + 'px'};
+      sliding(): {[k: string]: string} {
+        return { 'margin-left': -this.slideNum * +this.imageWidth + 'px'};
       },
     },
   });

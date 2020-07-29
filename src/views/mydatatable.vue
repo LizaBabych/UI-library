@@ -13,12 +13,11 @@
       </MyDataTable>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyDataTable </span>
-          :<span class="attr">config</span>=<span class="attr-string"> "config"</span>
-          :<span class="attr">users</span>=<span class="attr-string">"users"</span>
-      >
-      <<span class="tag">/MyDataTable</span>></pre>
+      <pre><<span class="tag">MyDataTable </span>
+    :<span class="attr">config</span>=<span class="attr-string"> "config"</span>
+    :<span class="attr">users</span>=<span class="attr-string">"users"</span>
+>
+<<span class="tag">/MyDataTable</span>></pre>
     </div>
     <div class="container">
       <h3>Configuration</h3>
@@ -30,24 +29,23 @@
     <p class="parag">In users, specify the value from the config and the value that will be displayed in the column.</p>
     <p class="parag">The _index field increments the value starting from 1. Thus, you can number the fields.</p>
     <div class="code">
-    <pre>
-    data() {
-      <span class="param">return</span> {
-        config: [
-          {tittle: <span class="attr-string">'№'</span>, value: <span class="attr-string">'_index'</span>},
-          {tittle: <span class="attr-string">'Имя'</span>, value: <span class="attr-string">'name'</span>},
-          {tittle: <span class="attr-string">'Фамилия'</span>, value: <span class="attr-string">'surname'</span>},
-          {tittle: <span class="attr-string">'Возраст'</span>, value: <span class="attr-string">'age'</span>, type: <span class="attr-string">'number'</span>},
-        ],
-        users: [
-          {id: <span class="attr">1</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Петров'</span>, age: <span class="attr-string">12</span>,},
-          {id: <span class="attr">2</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Васечкин'</span>, age: <span class="attr-string">15</span>,},
-          {id: <span class="attr">3</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Абрамов'</span>, age: <span class="attr-string">13</span>,},
-          {id: <span class="attr">4</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Бровкин'</span>, age: <span class="attr-string">18</span>,},
-          {id: <span class="attr">5</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Каролович'</span>, age: <span class="attr-string">11</span>,},
-        ],
-      },
-    },</pre>
+    <pre>data() {
+  <span class="param">return</span> {
+    config: [
+      {tittle: <span class="attr-string">'№'</span>, value: <span class="attr-string">'_index'</span>},
+      {tittle: <span class="attr-string">'Имя'</span>, value: <span class="attr-string">'name'</span>},
+      {tittle: <span class="attr-string">'Фамилия'</span>, value: <span class="attr-string">'surname'</span>},
+      {tittle: <span class="attr-string">'Возраст'</span>, value: <span class="attr-string">'age'</span>, type: <span class="attr-string">'number'</span>},
+    ],
+    users: [
+      {id: <span class="attr">1</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Петров'</span>, age: <span class="attr-string">12</span>,},
+      {id: <span class="attr">2</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Васечкин'</span>, age: <span class="attr-string">15</span>,},
+      {id: <span class="attr">3</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Абрамов'</span>, age: <span class="attr-string">13</span>,},
+      {id: <span class="attr">4</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Бровкин'</span>, age: <span class="attr-string">18</span>,},
+      {id: <span class="attr">5</span>, name: <span class="attr-string">'Вася'</span>, surname: <span class="attr-string">'Каролович'</span>, age: <span class="attr-string">11</span>,},
+    ],
+  },
+},</pre>
     </div>
     <div class="container">
       <h3>Sorting</h3>
@@ -62,23 +60,22 @@
       </MyDataTable>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyDataTable </span>
-          :<span class="attr">config1</span>=<span class="attr-string">"config1"</span>
-          :<span class="attr">users1</span>=<span class="attr-string">"users1"</span>
-      >
-      <<span class="tag">/MyDataTable</span>>
+      <pre><<span class="tag">MyDataTable </span>
+    :<span class="attr">config1</span>=<span class="attr-string">"config1"</span>
+    :<span class="attr">users1</span>=<span class="attr-string">"users1"</span>
+>
+<<span class="tag">/MyDataTable</span>>
 
-      data() {
-        <span class="param">return</span> {
-          config: [
-            {tittle: <span class="attr-string">'№'</span>, value: <span class="attr-string">'_index'</span>},
-            {tittle: <span class="attr-string">'Имя'</span>, value: <span class="attr-string">'name'</span>},
-            {tittle: <span class="attr-string">'Фамилия'</span>, value: <span class="attr-string">'surname'</span>, sortable: <span class="attr">true</span>},
-            {tittle: <span class="attr-string">'Возраст'</span>, value: <span class="attr-string">'age'</span>, type: <span class="attr-string">'number'</span>, sortable: <span class="attr">true</span>},
-          ],
-        },
-      },</pre>
+data() {
+  <span class="param">return</span> {
+    config: [
+      {tittle: <span class="attr-string">'№'</span>, value: <span class="attr-string">'_index'</span>},
+      {tittle: <span class="attr-string">'Имя'</span>, value: <span class="attr-string">'name'</span>},
+      {tittle: <span class="attr-string">'Фамилия'</span>, value: <span class="attr-string">'surname'</span>, sortable: <span class="attr">true</span>},
+      {tittle: <span class="attr-string">'Возраст'</span>, value: <span class="attr-string">'age'</span>, type: <span class="attr-string">'number'</span>, sortable: <span class="attr">true</span>},
+    ],
+  },
+},</pre>
     </div>
     <div class="container">
       <h3>Search</h3>
@@ -96,29 +93,27 @@
       </MyDataTable>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyDataTable </span>
-          :<span class="attr">config</span>=<span class="attr-string">"config"</span>
-          :<span class="attr">users</span>=<span class="attr-string">"users"</span>
-          :<span class="attr">search</span>=<span class="attr-string">"search"</span>
-      >
-      <<span class="tag">/MyDataTable</span>></pre>
+      <pre><<span class="tag">MyDataTable </span>
+    :<span class="attr">config</span>=<span class="attr-string">"config"</span>
+    :<span class="attr">users</span>=<span class="attr-string">"users"</span>
+    :<span class="attr">search</span>=<span class="attr-string">"search"</span>
+>
+<<span class="tag">/MyDataTable</span>></pre>
     </div>
     <div class="container">
       <h3>Search data</h3>
     </div>
     <div class="code">
-    <pre>
-    data() {
-      <span class="param">return</span> {
-        search: {
-          fields: [<span class="attr-string">'name'</span>, <span class="attr-string">'surname'</span>],
-          filters: [
-            (v)<span class="param"> => </span><span style="color: red">v</span>.<span style="color: Blue">toLowerCase</span>(),
-          ],
-        },
-      },
-    },</pre>
+    <pre>data() {
+  <span class="param">return</span> {
+    search: {
+      fields: [<span class="attr-string">'name'</span>, <span class="attr-string">'surname'</span>],
+      filters: [
+        (v)<span class="param"> => </span><span style="color: red">v</span>.<span style="color: Blue">toLowerCase</span>(),
+      ],
+    },
+  },
+},</pre>
     </div>
     <div class="container">
       <h3>Properties</h3>
@@ -161,7 +156,7 @@ export default({
       search: {
         fields: ['name', 'surname'],
         filters: [
-          (v) => v.toLowerCase(),
+          (v: any) => v.toLowerCase(),
         ],
       },
       config1: [

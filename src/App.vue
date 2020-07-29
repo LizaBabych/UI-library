@@ -51,6 +51,7 @@ export default({
   }
   .example {
     display: flex;
+    justify-content: center;
     align-items: baseline;
     border: 1px solid rgba(0,0,0,.125);
     padding: 15px;
@@ -106,7 +107,7 @@ export default({
     }
     .example {
       overflow-x: scroll;
-      padding-left: 0;
+      justify-content: flex-start;
     }
   }
 

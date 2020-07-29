@@ -13,12 +13,11 @@
       <Column>3</Column>
     </Row>
     <div class="code">
-    <pre>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>></pre>
+    <pre><<span class="tag">Row</span>>
+   <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>3<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <h3>Auto-layout columns</h3>
@@ -59,42 +58,41 @@
       <Column>12</Column>
     </Row>
     <div class="code">
-    <pre>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column</span>>1<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-       <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>>
-    <<span class="tag">Row</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-      <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>></pre>
+    <pre><<span class="tag">Row</span>>
+   <<span class="tag">Column</span>>1<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>>
+<<span class="tag">Row</span>>
+   <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>>
+<<span class="tag">Row</span>>
+   <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>4<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>>
+<<span class="tag">Row</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+   <<span class="tag">Column</span>>6<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>>
+<<span class="tag">Row</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+  <<span class="tag">Column</span>>12<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <h3>Background color of columns</h3>
@@ -107,12 +105,11 @@
       <Column color="blue">Blue</Column>
     </Row>
     <div class="code">
-    <pre>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"green"</span>>Green<<span class="tag">/Column</span>>
-       <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"red"</span>>Red<<span class="tag">/Column</span>>
-       <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"blue"</span>>Blue<<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>></pre>
+    <pre><<span class="tag">Row</span>>
+   <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"green"</span>>Green<<span class="tag">/Column</span>>
+   <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"red"</span>>Red<<span class="tag">/Column</span>>
+   <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"blue"</span>>Blue<<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <h3>Nested rows</h3>
@@ -127,15 +124,14 @@
       </Column>
     </Row>
     <div class="code">
-    <pre>
-    <<span class="tag">Row</span>>
-       <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"LightGrey"</span>
-         <<span class="tag">Row</span>>
-            <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
-            <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
-         <<span class="tag">/Row</span>>
-       <<span class="tag">/Column</span>>
-    <<span class="tag">/Row</span>></pre>
+    <pre><<span class="tag">Row</span>>
+   <<span class="tag">Column </span><span class="attr">color</span>=<span class="attr-string">"LightGrey"</span>
+     <<span class="tag">Row</span>>
+        <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
+        <<span class="tag">Column</span>>2<<span class="tag">/Column</span>>
+     <<span class="tag">/Row</span>>
+   <<span class="tag">/Column</span>>
+<<span class="tag">/Row</span>></pre>
     </div>
     <div class="container">
       <h3>Properties</h3>

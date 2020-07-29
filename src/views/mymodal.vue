@@ -7,8 +7,7 @@
     <div class="example">
     <MyModal></MyModal>
     </div>
-    <div class="code">
-      <pre><<span class="tag">MyModal</span>><<span class="tag">/MyModal</span>></pre>
+    <div class="code"><pre><<span class="tag">MyModal</span>><<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
       <h3>Slots</h3>
@@ -33,20 +32,19 @@
       </MyModal>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyModal</span>>
-        <<span class="tag">template</span> #<span class="attr">head</span>>
-          HEADER
-        <<span class="tag">/template</span>>
-        <<span class="tag">template</span> #<span class="attr">body</span>>
-          Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-        <<span class="tag">/template</span>>
-        <<span class="tag">template</span> #<span class="attr">footer</span>>
-          <<span class="tag">MyButton</span>>Okey<<span class="tag">/MyButton</span>>
-        <<span class="tag">/template</span>>
-      <<span class="tag">/MyModal</span>></pre>
+      <pre><<span class="tag">MyModal</span>>
+  <<span class="tag">template</span> #<span class="attr">head</span>>
+    HEADER
+  <<span class="tag">/template</span>>
+  <<span class="tag">template</span> #<span class="attr">body</span>>
+    Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  <<span class="tag">/template</span>>
+  <<span class="tag">template</span> #<span class="attr">footer</span>>
+    <<span class="tag">MyButton</span>>Okey<<span class="tag">/MyButton</span>>
+  <<span class="tag">/template</span>>
+<<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
       <h3>Trigger slot</h3>
@@ -72,23 +70,22 @@
       </MyModal>
     </div>
     <div class="code">
-      <pre>
-      <<span class="tag">MyModal</span>>
-        <<span class="tag">template</span> #<span class="attr">trigger</span>>
-          <<span class="tag">MyButton</span>>Trigger<<span class="tag">/MyButton</span>>
-        <<span class="tag">/template</span>>
-        <<span class="tag">template</span> #<span class="attr">head</span>>
-          HEADER
-        <<span class="tag">/template</span>>
-        <<span class="tag">template</span> #<span class="attr">body</span>>
-          Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
-        <<span class="tag">/template</span>>
-        <<span class="tag">template</span> #<span class="attr">footer</span>>
-          <<span class="tag">MyButton</span>>Okey<<span class="tag">/MyButton</span>>
-        <<span class="tag">/template</span>>
-      <<span class="tag">/MyModal</span>></pre>
+      <pre><<span class="tag">MyModal</span>>
+  <<span class="tag">template</span> #<span class="attr">trigger</span>>
+    <<span class="tag">MyButton</span>>Trigger<<span class="tag">/MyButton</span>>
+  <<span class="tag">/template</span>>
+  <<span class="tag">template</span> #<span class="attr">head</span>>
+    HEADER
+  <<span class="tag">/template</span>>
+  <<span class="tag">template</span> #<span class="attr">body</span>>
+    Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  <<span class="tag">/template</span>>
+  <<span class="tag">template</span> #<span class="attr">footer</span>>
+    <<span class="tag">MyButton</span>>Okey<<span class="tag">/MyButton</span>>
+  <<span class="tag">/template</span>>
+<<span class="tag">/MyModal</span>></pre>
     </div>
     <div class="container">
       <h3>Events</h3>

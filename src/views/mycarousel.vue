@@ -10,31 +10,29 @@
       </MyCarousel>
     </div>
     <div class="code">
-    <pre>
-    <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>>
-    <<span class="tag">/MyCarousel</span>></pre>
+    <pre><<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>>
+<<span class="tag">/MyCarousel</span>></pre>
     </div>
     <div class="container">
       <h3>Array of pictures</h3>
     </div>
     <p class="parag">For pictures to be displayed in the carousel, you must specify them in the required property.</p>
     <div class="code">
-    <pre>
-    data() {
-      <span style="color: Violet">return</span> {
-        pictures: [
-          <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
-          <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
-          <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
-          <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
-          <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
-          <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
-          <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
-          <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
-          <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
-        ],
-      },
-    },</pre>
+    <pre>data() {
+  <span style="color: Violet">return</span> {
+    pictures: [
+      <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
+      <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
+      <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
+      <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
+      <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
+      <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
+      <span class="attr-string">'https://loremflickr.com/320/240/dog'</span>,
+      <span class="attr-string">'https://loremflickr.com/g/320/240/paris'</span>,
+      <span class="attr-string">'https://loremflickr.com/320/240/paris,girl/all'</span>,
+    ],
+  },
+},</pre>
     </div>
     <div class="container">
       <h3>Sizing</h3>
@@ -45,20 +43,18 @@
       </MyCarousel></br>
     </div>
     <div class="code">
-    <pre>
-      <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
-      <span class="attr">imageWidth</span>=<span class="attr-string">"500"</span>>
-      <<span class="tag">/MyCarousel</span>></pre>
+    <pre><<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
+<span class="attr">imageWidth</span>=<span class="attr-string">"500"</span>>
+<<span class="tag">/MyCarousel</span>></pre>
     </div>
     <div class="example">
       <MyCarousel :pictures="pictures" imageWidth="250">
       </MyCarousel>
     </div>
     <div class="code">
-    <pre>
-    <<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
-    <span class="attr">imageWidth</span>=<span class="attr-string">"250"</span>>
-    <<span class="tag">/MyCarousel</span>></pre>
+    <pre><<span class="tag">MyCarousel </span>:<span class="attr">pictures</span>=<span class="attr-string">"pictures"</span>
+<span class="attr">imageWidth</span>=<span class="attr-string">"250"</span>>
+<<span class="tag">/MyCarousel</span>></pre>
     </div>
     <div class="container">
       <h3>Properties</h3>

@@ -28,7 +28,7 @@
           </th>
         </tr>
         </thead>
-        <tbody v-if="search">
+        <tbody>
         <tr
           v-for="(item, searchInd) in searchItem"
           :key="searchInd"
@@ -42,27 +42,12 @@
           </td>
         </tr>
         </tbody>
-        <tbody v-else>
-        <tr
-          v-for="(item, searchS) in sortData"
-          :key="searchS"
-        >
-          <td
-            v-for="(col, configInd) in config"
-            :key="configInd"
-            :class="{'align-right': col.type === 'number'}"
-          >
-          {{ col.value === '_index' ? searchS + 1 : item[col.value] }}
-          </td>
-        </tr>
-        </tbody>
       </table>
     </div>
   </div>
 </template>
 
 <script>
-  // import '@fortawesome/fontawesome-free/css/all.css';
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyDataTable',
@@ -108,9 +93,12 @@
     },
     computed: {
       searchItem() {
+        if (!this.search) {
+          return this.sortData;
+        }
         const searchUser = [];
         this.sortData.forEach((item) => {
-          for (const index in item) {
+          for (const index of Object.keys(item)) {
             this.search.fields.forEach((field) => {
               if (index === field) {
                 this.search.filters.forEach((filter) => {

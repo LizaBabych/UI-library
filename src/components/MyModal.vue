@@ -5,8 +5,8 @@
         <button>Open</button>
       </slot>
     </div>
+    <div class='modal' v-if='visible'></div>
     <div class="modal-container" v-if='visible'>
-      <div class='modal'></div>
       <div class='modal-content'>
         <div class='modal-head'>
           <slot name="head">Head</slot>
@@ -50,14 +50,17 @@
 .modal-container {
   display: flex;
   justify-content: center;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
 }
 .modal-content {
   background-color: rgb(240, 240, 240);
-  position: fixed;
   border: 1px solid gray;
   border-radius: 5px;
   width: @modal-width;
-  z-index: 1;
 }
 .modal {
   z-index: 1;
