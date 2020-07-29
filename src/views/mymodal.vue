@@ -70,7 +70,7 @@
       </MyModal>
     </div>
     <div class="code">
-      <pre><<span class="tag">MyModal</span>>
+      <pre>s<<span class="tag">MyModal</span>>
   <<span class="tag">template</span> #<span class="attr">trigger</span>>
     <<span class="tag">MyButton</span>>Trigger<<span class="tag">/MyButton</span>>
   <<span class="tag">/template</span>>
