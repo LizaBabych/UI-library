@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Modal</h1>
+    <h2 class="funny-title section-title">Modal</h2>
     <div class="container">
       <h3>Default modal window</h3>
     </div>
@@ -70,7 +70,7 @@
       </MyModal>
     </div>
     <div class="code">
-      <pre>s<<span class="tag">MyModal</span>>
+      <pre><<span class="tag">MyModal</span>>
   <<span class="tag">template</span> #<span class="attr">trigger</span>>
     <<span class="tag">MyButton</span>>Trigger<<span class="tag">/MyButton</span>>
   <<span class="tag">/template</span>>

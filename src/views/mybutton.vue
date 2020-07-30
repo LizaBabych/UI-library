@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Button</h1>
+    <h2 class="funny-title section-title">Button</h2>
     <div class="container">
       <h3>Use MyButton component for actions in forms, dialogs, and more.</h3>
     </div>

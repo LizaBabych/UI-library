@@ -82,4 +82,10 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .prev, .next  {
+    font-size: 25px;
+    padding: 15px;
+  }
+}
 </style>

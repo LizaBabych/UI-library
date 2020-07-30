@@ -39,13 +39,13 @@ export default({
   .parag {
     margin: 0;
     text-align: center;
-    background-color: rgb(255, 255, 223);
+    background-color: #fffef7;
     padding: 10px;
   }
   .container {
     display: flex;
     justify-content: center;
-    background-color: wheat;
+    background-color: #fcfaeb;
     padding: 10px;
     margin-top: 15px;
   }
@@ -103,7 +103,7 @@ export default({
     .code {
       font-size: 30px;
       overflow-x: scroll;
-      padding-left: 0;
+      padding: 0 15px;
     }
     .example {
       overflow-x: scroll;

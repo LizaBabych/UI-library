@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Data-table</h1>
+    <h2 class="funny-title section-title">Data-table</h2>
     <div class="container">
       <h3>The MyDataTable component is used to display tabular data.</h3>
     </div>

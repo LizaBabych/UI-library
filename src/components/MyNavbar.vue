@@ -36,9 +36,9 @@ export default Vue.extend({
 </script>
 
 <style lang="less">
-@menu-color: rgb(106, 90, 205);
-@header-color: rgba(92, 200, 255, 0.6);
-@secondary-header-color: rgba(0, 135, 255, 1);
+@menu-color: #6e6c63;
+@header-color: #575652;
+@secondary-header-color: #302f29;
 @header-width: 80px;
 
 .header {
@@ -64,7 +64,6 @@ export default Vue.extend({
   height: @header-width;
   align-items: center;
 }
-
 .header-list {
   display: flex;
   & li {
@@ -91,20 +90,22 @@ export default Vue.extend({
 @media (max-width: 767px) {
   .header-list {
     display: block;
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
     background-color: @menu-color;
+    text-transform: uppercase;
     & li {
       padding: 20px 0;
       left: 0;
     }
   }
-
+  .header-logo {
+    font-size: 30px;
+  }
   .header-burger {
     display: block;
     position: relative;
   }
-
   .header-menu {
     display: none;
     position: fixed;
@@ -113,7 +114,6 @@ export default Vue.extend({
     right: 0;
     width: 100%;
   }
-
   .headerMenuClose {
     display: block;
     position: fixed;

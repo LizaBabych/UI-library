@@ -172,5 +172,8 @@
       font-size: 30px;
     }
   }
+  input {
+    font-size: 25px;
+  }
 }
 </style>
