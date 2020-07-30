@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div class="home-width">
-      <img src="@/library.jpg" alt="Error"></img></br>
+    <div class="home-page">
+      <h2 class="funny-title section-title">UI-library</h2>
+      <img src="@/assets/book.gif" alt="">
     </div>
-    <h2 class="title">UI-library</h2>
   </div>
 </template>
 
@@ -80,13 +80,9 @@ h1 {
   display: flex;
   justify-content: center;
 }
-.home-width {
+.home-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  & img {
-    width: 300px;
-    height: 300px;
-  }
 }
-.title { text-align: center; }
 </style>

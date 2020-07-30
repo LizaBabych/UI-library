@@ -79,35 +79,39 @@ export default({
     }
   }
   @media screen and (max-width: 991px) {
-    #app { width: 600px; }
+    #app {
+      width: 600px;
+    }
     .code {
-      display: flex;
-      justify-content: flex-start;
+      font-size: 18px;
       overflow-x: scroll;
+      justify-content: flex-start;
+    }
+    .example {
+      overflow-x: scroll;
+      margin: 0;
+      flex-wrap: wrap;
     }
   }
   @media screen and (max-width: 767px) {
     #app {
       width: 100%;
     }
-    h1 { font-size: 70px; }
-    h3 {
-      font-size: 40px;
-      text-align: left;
-    }
+    h1 { font-size: 22px; }
     .parag {
-      font-size: 35px;
+      font-size: 20px;
       text-align: left;
     }
-    .param { font-size: 35px; }
+    .param { font-size: 15px; }
     .code {
-      font-size: 30px;
+      font-size: 18px;
       overflow-x: scroll;
       padding: 0 15px;
     }
     .example {
       overflow-x: scroll;
-      justify-content: flex-start;
+      margin: 0;
+      flex-wrap: wrap;
     }
   }
 

@@ -84,8 +84,8 @@
 }
 @media screen and (max-width: 768px) {
   .prev, .next  {
-    font-size: 25px;
-    padding: 15px;
+    font-size: 20px;
+    padding: 5px;
   }
 }
 </style>

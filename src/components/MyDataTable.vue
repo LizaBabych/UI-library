@@ -163,17 +163,4 @@
     & .align-right { text-align: right; }
   }
 }
-@media screen and (max-width: 768px) {
-  .usersTable {
-    #table-search-input {
-      height: 60px;
-    }
-    & table {
-      font-size: 30px;
-    }
-  }
-  input {
-    font-size: 25px;
-  }
-}
 </style>

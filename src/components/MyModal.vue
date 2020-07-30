@@ -91,14 +91,7 @@
 
 @media screen and (max-width: 768px) {
   .modal-content {
-    font-size: 30px;
-  }
-  .modal-head {
-    font-size: 35px;
-  }
-  .openMod {
-    padding: 20px 30px;
-    font-size: 25px;
+    width: 100%;
   }
 }
 </style>

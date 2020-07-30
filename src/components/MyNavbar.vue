@@ -40,7 +40,6 @@ export default Vue.extend({
 @header-color: #575652;
 @secondary-header-color: #302f29;
 @header-width: 80px;
-
 .header {
   position: fixed;
   width: 100%;
@@ -51,12 +50,10 @@ export default Vue.extend({
   padding-left: 10px;
   z-index: 1;
 }
-
 .header-logo {
   width: 60px;
   height: 60px;
 }
-
 .header-body {
   position: relative;
   display: flex;
@@ -71,14 +68,12 @@ export default Vue.extend({
     margin: 0px 30px 0px 20px;
   }
 }
-
 .header-link {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 18px;
 }
-
 .header-burger {
   display: none;
   padding-right: 30px;
@@ -86,7 +81,6 @@ export default Vue.extend({
     color:white;
   }
 }
-
 @media (max-width: 767px) {
   .header-list {
     display: block;
@@ -109,18 +103,13 @@ export default Vue.extend({
   .header-menu {
     display: none;
     position: fixed;
-    top: 40px;
     left: 0;
     right: 0;
     width: 100%;
   }
   .headerMenuClose {
     display: block;
-    position: fixed;
-    top: 40px;
-    left: 0;
-    right: 0;
-    width: 100%;
+    top: 55px;
   }
 }
 </style>

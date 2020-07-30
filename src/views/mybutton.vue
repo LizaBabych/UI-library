@@ -37,7 +37,7 @@
       <MyButton color="light"> Light </MyButton>
       <MyButton color="dark"> Dark </MyButton>
       <MyButton color="primary"> Primary </MyButton>
-      <MyButton color="secondary"> Secondary </MyButton></br>
+      <MyButton color="secondary"> Secondary </MyButton>
     </div>
     <div class="code">
       <pre><<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"success"</span>> Success <<span class="tag">/MyButton</span>>
@@ -75,7 +75,7 @@
       <MyButton color="light" class="disabled"> Disabled </MyButton>
       <MyButton color="dark" class="disabled"> Disabled </MyButton>
       <MyButton color="primary" class="disabled"> Disabled </MyButton>
-      <MyButton color="secondary" class="disabled"> Disabled </MyButton></br>
+      <MyButton color="secondary" class="disabled"> Disabled </MyButton>
     </div>
     <div class="code">
       <pre><<span class="tag">MyButton </span><span class="attr">color</span>=<span class="attr-string">"success" </span><span class="attr">class</span>=<span class="attr-string">"disabled"</span>> Disabled <<span class="tag">/MyButton</span>>
