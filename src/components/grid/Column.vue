@@ -1,25 +1,31 @@
 <template>
-	<div class="col" :class="{['col-' + cols]: cols}">
+	<div class="col" :class="{['col-' + cols]: cols}" :style="{backgroundColor: this.color}">
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	export default Vue.extend({
-		name: 'Column',
-		props: {
-			cols: {
-				type: String,
-			},
-		}
-	});
+import Vue from 'vue';
+
+type Column = string | number;
+
+export default Vue.extend({
+  name: 'Column',
+  props: {
+   cols: {
+      type: String as () => Column,
+   },
+   color: {
+     type: String,
+     default: 'gray',
+   },
+  },
+});
 </script>
 
 <style lang="less">
 @columns: 12;
 .col {
-	background-color: gray;
 	border: 1px solid black;
 	padding: 15px;
   flex-grow: 1;

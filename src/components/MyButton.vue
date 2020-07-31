@@ -1,6 +1,5 @@
 <template>
-	<div class='button'
-			:class="'button-' + color + ' button-' + size"
+	<div class='button' :class="'button-' + color + ' button-' + size"
 	    @click='sendClick()'>
 			<slot></slot>
 	</div>
@@ -8,19 +7,23 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
+type Color = 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'primary' | 'secondary';
+type Size = 'sm' | 'lg';
+
 export default Vue.extend({
-	name: 'MyButton',
+  name: 'MyButton',
   props: {
-		size: {
-			type: String,
-		},
-		color: {
-			type: String,
-			default: 'primary',
-		},
+    size: {
+      type: String as () => Size,
+    },
+    color: {
+      type: String as () => Color,
+      default: 'primary',
+    },
   },
   methods: {
-    sendClick() {
+    sendClick(): void {
       this.$emit('click');
     },
   },
@@ -38,11 +41,10 @@ export default Vue.extend({
 @light: LightGray;
 
 .button {
-  display: inline-block;
   padding: 10px;
 	border: 1px solid black;
   border-radius: 5px;
-  margin: 5px 5px 0 0;
+  margin: 5px;
   color: white;
 }
 .button.disabled {

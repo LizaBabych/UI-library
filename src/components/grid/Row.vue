@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-	import Vue from 'vue';
-	export default Vue.extend({
-		name: 'Row',
-	});
+import Vue from 'vue';
+export default Vue.extend({
+  name: 'Row',
+});
 </script>
 
 <style>

@@ -2,12 +2,12 @@
   <div>
     <div @click='openModal'>
       <slot name='trigger'>
-        <button></button>
+        <button class="openMod">Open</button>
       </slot>
     </div>
-    <div id="modal">
-      <div class='modal' v-if='visible'></div>
-      <div class='modal-content' v-if="visible">
+    <div class='modal' v-if='visible'></div>
+    <div class="modal-container" v-if='visible'>
+      <div class='modal-content'>
         <div class='modal-head'>
           <slot name="head">Head</slot>
           <button @click='closeModal'>X</button>
@@ -47,24 +47,20 @@
 
 <style lang="less">
 @modal-width: 500px;
-#modal {
+.modal-container {
   display: flex;
   justify-content: center;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
 }
 .modal-content {
   background-color: rgb(240, 240, 240);
-  position: fixed;
   border: 1px solid gray;
   border-radius: 5px;
   width: @modal-width;
-  z-index: 10;
-  & h2 {
-    margin: 0 0 20px 0;
-    padding-left: 10px;
-  }
-}
-button {
-  background-color: rgb(180, 180, 180);
 }
 .modal {
   z-index: 1;
@@ -76,13 +72,12 @@ button {
   background-color: rgba(0,0,0,0.8);
 }
 .modal-head {
-   background-color: rgb(180, 180, 180);
-   display: flex;
-   padding: 5px;
-   justify-content: space-between;
-   align-items: flex-start;
-   border-bottom: 1px solid black;
-   font-size: 18px;
+  background-color: rgb(180, 180, 180);
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  font-size: 18px;
 }
 .modal-body {
   text-align: center;
@@ -92,5 +87,11 @@ button {
   display: flex;
   justify-content: center;
   padding: 0 10px 10px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+  }
 }
 </style>

@@ -23,16 +23,19 @@
 
 <script lang="ts">
   import Vue from 'vue';
+
+  type CarouselConfig = string[];
+
   export default Vue.extend({
     name: 'MyCarousel',
     props: {
       pictures: {
-        type: Array,
+        type: Array as () => CarouselConfig,
         required: true,
       },
       imageWidth: {
-        type: Number,
-        default: 320,
+        type: String,
+        default: '320',
       },
     },
     data() {
@@ -41,8 +44,8 @@
       };
     },
     computed: {
-      sliding() {
-        return { 'margin-left': -this.slideNum * this.imageWidth + 'px'};
+      sliding(): {[k: string]: string} {
+        return { 'margin-left': -this.slideNum * +this.imageWidth + 'px'};
       },
     },
   });
@@ -66,7 +69,6 @@
 }
 .prev, .next  {
   background-color: @button-color;
-  transition: 1s;
   position: absolute;
   cursor: pointer;
   font-size: 18px;
@@ -79,5 +81,11 @@
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
+}
+@media screen and (max-width: 768px) {
+  .prev, .next  {
+    font-size: 20px;
+    padding: 5px;
+  }
 }
 </style>
