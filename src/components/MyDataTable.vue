@@ -48,7 +48,7 @@
 </template>
 
 <script>
-  import '@fortawesome/fontawesome-free/css/all.css';
+  // import '@fortawesome/fontawesome-free/css/all.css';
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyDataTable',
