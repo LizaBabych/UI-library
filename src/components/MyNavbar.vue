@@ -28,7 +28,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    openMobileBurger(): any {
+    openMobileBurger(): void {
       this.burgerOpen = !this.burgerOpen;
     },
   },

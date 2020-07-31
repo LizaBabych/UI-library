@@ -24,13 +24,13 @@
 <script lang="ts">
   import Vue from 'vue';
 
-  type ICarouselConfig = string[];
+  type CarouselConfig = string[];
 
   export default Vue.extend({
     name: 'MyCarousel',
     props: {
       pictures: {
-        type: Array as () => ICarouselConfig,
+        type: Array as () => CarouselConfig,
         required: true,
       },
       imageWidth: {

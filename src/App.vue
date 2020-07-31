@@ -71,16 +71,14 @@ export default({
   }
   @media screen and (min-width: 992px) {
     #app {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       width: 900px;
-      margin: 0 10%;
+      margin-left: calc((100% - 900px) / 2);
     }
   }
   @media screen and (max-width: 991px) {
     #app {
       width: 600px;
+      margin-left: calc((100% - 600px) / 2);
     }
     .code {
       font-size: 18px;
@@ -96,6 +94,7 @@ export default({
   @media screen and (max-width: 767px) {
     #app {
       width: 100%;
+      margin: 0;
     }
     h1 { font-size: 22px; }
     .parag {
@@ -111,6 +110,7 @@ export default({
     .example {
       overflow-x: scroll;
       margin: 0;
+      padding: 0 15px;
       flex-wrap: wrap;
     }
   }

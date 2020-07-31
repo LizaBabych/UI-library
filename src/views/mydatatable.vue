@@ -156,7 +156,7 @@ export default({
       search: {
         fields: ['name', 'surname'],
         filters: [
-          (v: any) => v.toLowerCase(),
+          (v: string) => v.toLowerCase(),
         ],
       },
       config1: [
