@@ -48,94 +48,96 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
+import Vue from 'vue';
 
-  interface IColumnConfig {
-    title: string;
-    value: string;
-    type?: string;
-    sortable?: boolean;
-  }
+interface IColumnConfig {
+  title: string;
+  value: string;
+  type?: string;
+  sortable?: boolean;
+}
 
-  interface ITableItem {
-    [key: string]: string | number;
-  }
+interface ITableItem {
+  [key: string]: string | number;
+}
 
-  interface ISearchConfig {
-    fields: string[];
-    filters: Filter[];
-  }
+interface ISearchConfig {
+  fields: string[];
+  filters: Filter[];
+}
 
-  type Filter = (key: string | number) => string;
+type Filter = (key: string | number) => string;
 
-  export default Vue.extend({
-    name: 'MyDataTable',
-    props: {
-      users: {
-        type: Array as () => ITableItem[],
-        required: true,
-      },
-      config: {
-        type: Array as () => IColumnConfig[],
-        required: true,
-      },
-      search: {
-        type: Object as () => ISearchConfig,
-        default: null,
-      },
+export default Vue.extend({
+  name: 'MyDataTable',
+  props: {
+    users: {
+      type: Array as () => ITableItem[],
+      required: true,
     },
-    data() {
-      return {
-        value: '',
-        sortData: Array.from(this.users),
-        koef: [],
-      };
+    config: {
+      type: Array as () => IColumnConfig[],
+      required: true,
     },
-    methods: {
-      sorting(column: IColumnConfig, index: number): void {
-        if (this.koef[index] === 0 || this.koef[index] === undefined) {
-          this.sortData = Array.from(this.users);
-          this.koef[index] = 1;
-          return;
-        }
-        if (column.type === 'number') {
-          this.sortData.sort((u1: any, u2: any): number => (u1.age - u2.age) * this.koef[index]);
-        } else {
-          this.sortData.sort((u1: any, u2: any): number => u1.surname.localeCompare(u2.surname) * this.koef[index]);
-        }
-        if (this.koef[index] === 1) {
-          this.koef[index] = -1;
-          return;
-        }
-        if (this.koef[index] === -1) {
-          this.koef[index] = 0;
-          return;
-        }
-      },
+    search: {
+      type: Object as () => ISearchConfig,
+      default: null,
     },
-    computed: {
-      searchItem(): ITableItem[] {
-        if (!this.search) {
-          return this.sortData;
-        }
-        const searchUser: ITableItem[] = [];
-        this.sortData.forEach((item) => {
-          for (const index of Object.keys(item)) {
-            this.search.fields.forEach((field) => {
-              if (index === field) {
-                this.search.filters.forEach((filter) => {
-                   if (filter(item[index]).includes(filter(this.value)) && !searchUser.includes(item)) {
-                      searchUser.push(item);
-                   }
-                });
-              }
-            });
-          }
-        });
-        return searchUser;
-      },
+  },
+  data() {
+    return {
+      value: '',
+      sortData: Array.from(this.users),
+      koef: [0],
+    };
+  },
+  methods: {
+    sorting(column: IColumnConfig, index: number): void {
+      if (this.koef[index] === 0 || this.koef[index] === undefined) {
+        this.sortData = Array.from(this.users);
+        this.koef[index] = 1;
+        return;
+      }
+      if (column.type === 'number') {
+        this.sortData.sort((u1: ITableItem, u2: ITableItem): number =>
+          (+u1.age - +u2.age) * this.koef[index]);
+      } else {
+        this.sortData.sort((u1: ITableItem, u2: ITableItem): number =>
+          (u1.surname as string).localeCompare((u2.surname as string)) * this.koef[index]);
+      }
+      if (this.koef[index] === 1) {
+        this.koef[index] = -1;
+        return;
+      }
+      if (this.koef[index] === -1) {
+        this.koef[index] = 0;
+        return;
+      }
     },
-  });
+  },
+  computed: {
+    searchItem(): ITableItem[] {
+      if (!this.search) {
+        return this.sortData;
+      }
+      const searchUser: ITableItem[] = [];
+      this.sortData.forEach((item) => {
+        for (const index of Object.keys(item)) {
+          this.search.fields.forEach((field) => {
+            if (index === field) {
+              this.search.filters.forEach((filter) => {
+                 if (filter(item[index]).includes(filter(this.value)) && !searchUser.includes(item)) {
+                    searchUser.push(item);
+                 }
+              });
+            }
+          });
+        }
+      });
+      return searchUser;
+    },
+  },
+});
 </script>
 
 <style lang="less">

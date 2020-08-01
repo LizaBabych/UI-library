@@ -27,11 +27,6 @@
   import Vue from 'vue';
   export default Vue.extend({
     name: 'MyModal',
-    data() {
-      return {
-        visible: false,
-      };
-    },
     methods: {
       openModal(): void {
         this.visible = true;
@@ -41,6 +36,11 @@
         this.visible = false;
         this.$emit('closeModal');
       },
+    },
+    data() {
+      return {
+        visible: false,
+      };
     },
   });
 </script>

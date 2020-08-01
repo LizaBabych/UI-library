@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 class="funny-title section-title">Grid</h2>
+    <h2 class="title-component section-title">Grid</h2>
     <div class="container">
       <h3>Layout and Grid System</h3>
     </div>

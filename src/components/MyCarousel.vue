@@ -44,7 +44,7 @@
       };
     },
     computed: {
-      sliding(): {[k: string]: string} {
+      sliding(): { [key: string]: string } {
         return { 'margin-left': -this.slideNum * +this.imageWidth + 'px'};
       },
     },

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="home-page">
-      <h2 class="funny-title section-title">UI-library</h2>
+      <h2 class="title-component section-title">UI-library</h2>
       <img src="@/assets/book.gif" alt="">
     </div>
   </div>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <MyNavbar class="nav">
+    <MyNavbar>
       <template #logo>
-        <router-link class='logo-link' to="/home">HOME</router-link></li>
+        <router-link class='logo-link' to="/home">HOME</router-link>
       </template>
       <template #menu>
         <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
@@ -32,7 +32,7 @@ export default({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h2.funny-title{
+h2.title-component{
   border-top: 5px solid #E0DBDE;
   border-bottom: 5px solid #E0DBDE;
   font-size: 70px;

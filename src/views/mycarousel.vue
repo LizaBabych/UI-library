@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 class="funny-title section-title">Carousel</h2>
+    <h2 class="title-component section-title">Carousel</h2>
     <div class="container">
       <h3>Use the component carousel for demonstration pictures</h3>
     </div>

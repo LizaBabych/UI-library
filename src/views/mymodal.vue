@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 class="funny-title section-title">Modal</h2>
+    <h2 class="title-component section-title">Modal</h2>
     <div class="container">
       <h3>Default modal window</h3>
     </div>

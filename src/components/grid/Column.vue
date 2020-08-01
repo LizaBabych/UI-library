@@ -8,6 +8,7 @@
 import Vue from 'vue';
 
 type Column = string | number;
+type Color = string;
 
 export default Vue.extend({
   name: 'Column',
@@ -16,7 +17,7 @@ export default Vue.extend({
       type: String as () => Column,
    },
    color: {
-     type: String,
+     type: String as () => Color,
      default: 'gray',
    },
   },
@@ -27,7 +28,7 @@ export default Vue.extend({
 @columns: 12;
 .col {
 	border: 1px solid black;
-	padding: 15px;
+	padding: 15px 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
