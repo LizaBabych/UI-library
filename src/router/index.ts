@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: () => import('../views/Home.vue'),
   },
@@ -46,7 +46,9 @@ const routes: RouteConfig[] = [
   },
 ];
 
-const router = new VueRouter({
+const router: VueRouter = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes,
 });
 

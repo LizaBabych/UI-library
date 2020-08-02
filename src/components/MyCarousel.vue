@@ -25,6 +25,7 @@
   import Vue from 'vue';
 
   type CarouselConfig = string[];
+  type CarouselWidth = string | number;
 
   export default Vue.extend({
     name: 'MyCarousel',
@@ -34,7 +35,7 @@
         required: true,
       },
       imageWidth: {
-        type: String,
+        type: String as () => CarouselWidth,
         default: '320',
       },
     },

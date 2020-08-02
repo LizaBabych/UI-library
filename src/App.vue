@@ -2,7 +2,7 @@
   <div id="app">
     <MyNavbar>
       <template #logo>
-        <router-link class='logo-link' to="/home">HOME</router-link>
+        <router-link class='logo-link' to="/">HOME</router-link>
       </template>
       <template #menu>
         <li><router-link class="burger-link" to="/mybutton">MyButton</router-link></li>
