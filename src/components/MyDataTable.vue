@@ -100,10 +100,10 @@ export default Vue.extend({
       }
       if (column.type === 'number') {
         this.sortData.sort((u1: ITableItem, u2: ITableItem): number =>
-          (+u1.age - +u2.age) * this.koef[index]);
+          (+u1[column.value] - +u2[column.value] ) * this.koef[index]);
       } else {
         this.sortData.sort((u1: ITableItem, u2: ITableItem): number =>
-          (u1.surname as string).localeCompare((u2.surname as string)) * this.koef[index]);
+          (u1[column.value] as string).localeCompare((u2[column.value] as string)) * this.koef[index]);
       }
       if (this.koef[index] === 1) {
         this.koef[index] = -1;
