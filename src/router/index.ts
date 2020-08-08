@@ -12,37 +12,27 @@ const routes: RouteConfig[] = [
   {
     path: '/mybutton',
     name: 'mybutton',
-    component: () => import('../views/mybutton.vue'),
+    component: () => import('../views/MyButtonView.vue'),
   },
   {
     path: '/mygrid',
     name: 'mygrid',
-    component: () => import('../views/mygrid.vue'),
+    component: () => import('../views/MyGridView.vue'),
   },
   {
     path: '/mymodal',
     name: 'mymodal',
-    component: () => import('../views/mymodal.vue'),
-  },
-  {
-    path: '/mynavbar',
-    name: 'mynavbar',
-    component: () => import('../views/mynavbar.vue'),
-  },
-  {
-    path: '/mymodal',
-    name: 'mymodal',
-    component: () => import('../views/mymodal.vue'),
+    component: () => import('../views/MyModalView.vue'),
   },
   {
     path: '/mycarousel',
     name: 'mycarousel',
-    component: () => import('../views/mycarousel.vue'),
+    component: () => import('../views/MyCarouselView.vue'),
   },
   {
     path: '/mydatatable',
     name: 'mydatatable',
-    component: () => import('../views/mydatatable.vue'),
+    component: () => import('../views/MyDataTableView.vue'),
   },
 ];
 
